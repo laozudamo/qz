@@ -92,10 +92,6 @@
           	title: "帮助中心",
           	url: "/minePages/help",
           },
-        	{
-        		title: "版本更新",
-        		url: "/minePages/version",
-        	}
         ]
       }
     },

@@ -9,192 +9,13 @@
       </view>
     </tn-nav-bar>
     
-    <view class="tn-margin-top tn-margin-bottom" :style="{paddingTop: vuex_custom_bar_height + 'px'}">
-      <swiper class="card-swiper" :circular="true"
-        :autoplay="true" duration="500" interval="5000" @change="cardSwiper"> 
-        <swiper-item v-for="(item,index) in swiperList" :key="index" :class="cardCur==index?'cur':''">
-          <view class="swiper-item image-banner">
-            <image :src="item.url" mode="aspectFill" v-if="item.type=='image'"></image>
-          </view>
-        </swiper-item>
-      </swiper>
-      <view class="indication">
-          <block v-for="(item,index) in swiperList" :key="index">
-              <view class="spot" :class="cardCur==index?'active':''"></view>
-          </block>
-      </view>
-    </view>
-    
-    
     <view class="tn-padding-bottom-xl">
-      
       <view class="tn-bg-white">
         <tn-sticky :offsetTop="0" :customNavHeight="vuex_custom_bar_height">
           <tn-tabs :list="fixedList" :current="current" :isScroll="false" activeColor="#000" bold="true" backgroundColor="#FFFFFF" :fontSize="32" :badgeOffset="[20, 50]" @change="tabChange"></tn-tabs>
         </tn-sticky>
       </view>
-      
-
-      <view class="" v-if="current==0">
-        <view class="tn-margin" v-for="(item,index) in 6" :key="index">
-          <view class="tn-flex tn-flex-row-between tn-flex-col-center tn-padding website-shadow" @click="tn('/preferredPages/shop')">
-            <view class="justify-content-item">
-              <view class="tn-flex tn-flex-col-center tn-flex-row-left">
-                <view class="logo-pic">
-                  <view class="logo-image">
-                    <view class="tn-shadow-blur" style="background-image:url('/static/avator.jpg');width: 110rpx;height: 110rpx;background-size: cover;">
-                    </view>
-                  </view>
-                </view>
-                <view class="tn-padding-right tn-color-black">
-                  <view class="tn-padding-right tn-padding-left-sm tn-text-lg tn-text-bold">
-                    皮皮不皮
-                  </view>
-                  <view class="tn-padding-right tn-padding-top-xs tn-text-ellipsis tn-padding-left-sm">
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-brown tn-padding-left-xs tn-text-bold">5.0</text>
-                  </view>
-                </view>
-              </view>
-            </view>
-            <view class="justify-content-item tn-flex-row-center">
-              <view class="tn-cool-bg-color-15 tn-padding-xs tn-color-white tn-round tn-shadow-blur">
-                <text class="tn-padding-left-xs">进店看看</text>
-                <text class="tn-icon-send-fill tn-padding-xs"></text>
-              </view>
-            </view>
-          </view>
-        </view>
       </view>
-      
-      <view class="" v-if="current==1">
-        <view class="tn-margin" v-for="(item,index) in 2" :key="index">
-          <view class="tn-flex tn-flex-row-between tn-flex-col-center tn-padding website-shadow" @click="tn('/preferredPages/shop')">
-            <view class="justify-content-item">
-              <view class="tn-flex tn-flex-col-center tn-flex-row-left">
-                <view class="logo-pic tn-shadow">
-                  <view class="logo-image">
-                    <view class="tn-shadow-blur" style="background-image:url('/static/avator.jpg');width: 110rpx;height: 110rpx;background-size: cover;">
-                    </view>
-                  </view>
-                </view>
-                <view class="tn-padding-right tn-color-black">
-                  <view class="tn-padding-right tn-padding-left-sm tn-text-lg tn-text-bold">
-                    皮皮不皮
-                  </view>
-                  <view class="tn-padding-right tn-padding-top-xs tn-text-ellipsis tn-padding-left-sm">
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-brown tn-padding-left-xs tn-text-bold">5.0</text>
-                  </view>
-                </view>
-              </view>
-            </view>
-            <view class="justify-content-item tn-flex-row-center">
-              <view class="tn-cool-bg-color-15 tn-padding-xs tn-color-white tn-round tn-shadow-blur">
-                <text class="tn-padding-left-xs">进店看看</text>
-                <text class="tn-icon-send-fill tn-padding-xs"></text>
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-      
-      <view class="" v-if="current==2">
-        <view class="tn-margin" v-for="(item,index) in 4" :key="index">
-          <view class="tn-flex tn-flex-row-between tn-flex-col-center tn-padding website-shadow" @click="tn('/preferredPages/shop')">
-            <view class="justify-content-item">
-              <view class="tn-flex tn-flex-col-center tn-flex-row-left">
-                <view class="logo-pic tn-shadow">
-                  <view class="logo-image">
-                    <view class="tn-shadow-blur" style="background-image:url('/static/avator.jpg');width: 110rpx;height: 110rpx;background-size: cover;">
-                    </view>
-                  </view>
-                </view>
-                <view class="tn-padding-right tn-color-black">
-                  <view class="tn-padding-right tn-padding-left-sm tn-text-lg tn-text-bold">
-                    皮皮不皮
-                  </view>
-                  <view class="tn-padding-right tn-padding-top-xs tn-text-ellipsis tn-padding-left-sm">
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-brown tn-padding-left-xs tn-text-bold">5.0</text>
-                  </view>
-                </view>
-              </view>
-            </view>
-            <view class="justify-content-item tn-flex-row-center">
-              <view class="tn-cool-bg-color-15 tn-padding-xs tn-color-white tn-round tn-shadow-blur">
-                <text class="tn-padding-left-xs">进店看看</text>
-                <text class="tn-icon-send-fill tn-padding-xs"></text>
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-      
-      <view class="" v-if="current==3">
-        <view class="tn-margin" v-for="(item,index) in 6" :key="index">
-          <view class="tn-flex tn-flex-row-between tn-flex-col-center tn-padding website-shadow" @click="tn('/preferredPages/shop')">
-            <view class="justify-content-item">
-              <view class="tn-flex tn-flex-col-center tn-flex-row-left">
-                <view class="logo-pic tn-shadow">
-                  <view class="logo-image">
-                    <view class="tn-shadow-blur" style="background-image:url('/static/avator.jpg');width: 110rpx;height: 110rpx;background-size: cover;">
-                    </view>
-                  </view>
-                </view>
-                <view class="tn-padding-right tn-color-black">
-                  <view class="tn-padding-right tn-padding-left-sm tn-text-lg tn-text-bold">
-                    皮皮不皮
-                  </view>
-                  <view class="tn-padding-right tn-padding-top-xs tn-text-ellipsis tn-padding-left-sm">
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-                    <text class="tn-color-brown tn-padding-left-xs tn-text-bold">5.0</text>
-                  </view>
-                </view>
-              </view>
-            </view>
-            <view class="justify-content-item tn-flex-row-center">
-              <view class="tn-cool-bg-color-15 tn-padding-xs tn-color-white tn-round tn-shadow-blur">
-                <text class="tn-padding-left-xs">进店看看</text>
-                <text class="tn-icon-send-fill tn-padding-xs"></text>
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-      
-  <!--    <view class="tn-margin">
-        <view class="tn-flex tn-flex-row-between">
-          <view class="justify-content-item tn-text-bold tn-text-xxl">
-            北北带你学设计 & 尽早放弃
-          </view>
-        </view>
-        <view class="tn-flex tn-flex-row-between tn-margin-top">
-          <view class="justify-content-item tn-text-bold tn-color-purplered">
-            <text class="" style="font-size: 50rpx;">118</text>
-            <text class="tn-text-sm">￥</text>
-          </view>
-          <view class="justify-content-item tn-color-gray tn-padding-top-xs">
-            <view class="">已售 729</view>
-          </view>
-        </view>
-      </view> -->
       
       <!-- 边距间隔 -->
       <!-- <view class="tn-strip-bottom"></view> -->
@@ -249,7 +70,7 @@
       <!-- 边距间隔 -->
       <view class="tn-strip-bottom"></view>
 
-      
+<!--       
       <view class="tn-margin">
         <view class="tn-flex tn-flex-row-between">
           <view class="justify-content-item tn-text-bold tn-text-xl">
@@ -257,7 +78,7 @@
           </view>
         </view>
       </view>
-      
+       -->
       <view class="content-backgroup tn-margin">
         <image src='https://resource.tuniaokj.com/images/content/rodion.jpg' mode='widthFix' class='backgroud-image'></image>
       </view>

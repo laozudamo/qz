@@ -119,7 +119,7 @@
     
     <tn-modal v-model="show1" :custom="true">
       <view class="custom-modal-content">
-        <image @tap="previewQRCodeImage" src='https://resource.tuniaokj.com/images/advertise/qrcode.jpg' mode='aspectFill' style="width: 100%;"></image>
+        <image @tap="previewQRCodeImage" src='https://baike.baidu.com/item/%E4%BA%8C%E7%BB%B4%E7%A0%81/2385673' mode='aspectFill' style="width: 100%;"></image>
         <view class="tn-text-center tn-padding-top">作者微信：tnkewo</view>
         <view class="tn-text-center tn-padding-top tn-text-lg">点击上图，可识别微信二维码</view>
       </view>
@@ -172,7 +172,7 @@
           id: 3,
           type: 'image',
           title: ' 北北',
-          name: '微信号 tnkewo',
+          name: '乡村游',
           text: '商业合作请联系作者',
           url: 'https://resource.tuniaokj.com/images/swiper/swiper3.jpg',
         }, {
@@ -213,7 +213,7 @@
       // 预览作者图片
       previewQRCodeImage() {
         wx.previewImage({
-          urls: ['https://resource.tuniaokj.com/images/advertise/qrcode.jpg']
+          urls: ['https://baike.baidu.com/item/%E4%BA%8C%E7%BB%B4%E7%A0%81/2385673']
         })
       },
       // 获取顶部销售信息容器相关信息

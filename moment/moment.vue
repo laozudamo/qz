@@ -56,7 +56,7 @@
     
     <tn-modal v-model="show1" :custom="true">
       <view class="custom-modal-content">
-        <image @tap="previewQRCodeImage" src='https://resource.tuniaokj.com/images/advertise/qrcode.jpg' mode='aspectFill' style="width: 100%;"></image>
+        <image @tap="previewQRCodeImage" src='https://baike.baidu.com/item/%E4%BA%8C%E7%BB%B4%E7%A0%81/2385673' mode='aspectFill' style="width: 100%;"></image>
         <view class="tn-text-center tn-padding-top">欢迎加入高老庄村庄群</view>
         <view class="tn-text-center tn-padding-top tn-text-lg">点击上图，可识别微信二维码</view>
       </view>
@@ -442,7 +442,7 @@
       // 预览村庄管理员微信图片
       previewQRCodeImage() {
         wx.previewImage({
-          urls: ['https://resource.tuniaokj.com/images/advertise/qrcode.jpg']
+          urls: ['https://baike.baidu.com/item/%E4%BA%8C%E7%BB%B4%E7%A0%81/2385673']
         })
       },
       // 弹出模态框

@@ -454,7 +454,7 @@
           id: 3,
           type: 'image',
           title: ' 北北',
-          name: '微信号 tnkewo',
+          name: '乡村游',
           text: '商业合作请联系作者',
           url: 'https://resource.tuniaokj.com/images/swiper/swiper3.jpg',
         }, {

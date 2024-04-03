@@ -333,13 +333,6 @@
           }
         },
         {
-          "path": "version",
-          "style": {
-            "navigationBarTitleText": "版本更新",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
           "path": "help",
           "style": {
             "navigationBarTitleText": "帮助中心",
@@ -394,6 +387,13 @@
             "navigationBarTitleText": "富文本",
             "enablePullDownRefresh": false
           }
+        },
+        {
+          "path": "cart/cart",
+          "style": {
+            "navigationBarTitleText": "购物车",
+            "enablePullDownRefresh": false
+          }
         }
       ]
     },
@@ -418,6 +418,48 @@
           "path": "hotelDetail",
           "style": {
             "navigationBarTitleText": "详情",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "classify",
+          "style": {
+            "navigationBarTitleText": "集市",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "yx",
+          "style": {
+            "navigationBarTitleText": "优选",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "msg/msg",
+          "style": {
+            "navigationBarTitleText": "消息",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "msg/chat/chat",
+          "style": {
+            "navigationBarTitleText": "聊天",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "line",
+          "style": {
+            "navigationBarTitleText": "跟团游",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "cz",
+          "style": {
+            "navigationBarTitleText": "精选村庄",
             "enablePullDownRefresh": false
           }
         }

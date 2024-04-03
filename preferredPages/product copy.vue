@@ -117,7 +117,7 @@
           </view>
           <view class="tn-padding-right tn-color-black">
             <view class="tn-padding-right tn-padding-left-sm tn-text-xl tn-text-bold">
-              抓住那只高产母猪
+              皮皮不皮
             </view>
             <view class="tn-padding-right tn-padding-top-xs tn-text-ellipsis tn-padding-left-sm">
               <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
@@ -405,7 +405,7 @@
           id: 3,
           type: 'image',
           title: ' 北北',
-          name: '微信号 tnkewo',
+          name: '乡村游',
           text: '商业合作请联系作者',
           url: 'https://resource.tuniaokj.com/images/swiper/ad4.jpg',
         }],

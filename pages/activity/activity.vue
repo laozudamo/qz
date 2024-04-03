@@ -1485,7 +1485,7 @@ $cube-split: 60rpx;
 }
 
 .the-page {
-  height: calc(100vn - 200rpx);
+  height: calc(100vh - 200rpx);
   overflow-y: auto;
 }
 

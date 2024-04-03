@@ -11,17 +11,6 @@
     
     <!-- 立体头像-->
     <view class='cube' :style="'background-image: url(https://resource.tuniaokj.com/images/blogger/bg_image_1.jpg);'">
-      <view class="cube__container">
-        <view class="cube__container__body">
-          <view class="cube__container__body__item cube__container__body__item--front" :style="{backgroundImage: `url(${userInfo.avatar[0]})`}"></view>
-          <view class="cube__container__body__item cube__container__body__item--back" :style="{backgroundImage: `url(${userInfo.avatar[0]})`}"></view>
-          <view class="cube__container__body__item cube__container__body__item--right" :style="{backgroundImage: `url(${userInfo.avatar[1]})`}"></view>
-          <view class="cube__container__body__item cube__container__body__item--left" :style="{backgroundImage: `url(${userInfo.avatar[1]})`}"></view>
-          <view class="cube__container__body__item cube__container__body__item--top" :style="{backgroundImage: `url(${userInfo.avatar[2]})`}"></view>
-          <view class="cube__container__body__item cube__container__body__item--bottom" :style="{backgroundImage: `url(${userInfo.avatar[2]})`}"></view>
-        </view>
-      </view>
-      
       
       <view class='tn-text-center tn-margin-top-lg'>
         <view class="tn-padding tn-text-bold tn-text-lg">{{ userInfo.username }}</view>
