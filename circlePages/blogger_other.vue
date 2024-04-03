@@ -11,7 +11,7 @@
     
     <!-- 立体头像-->
     <view class='cube' :style="'background-image: url(https://resource.tuniaokj.com/images/blogger/bg_image_1.jpg);'">
-      <view class="cube__container">
+      <!-- <view class="cube__container">
         <view class="cube__container__body">
           <view class="cube__container__body__item cube__container__body__item--front" :style="{backgroundImage: `url(${userInfo.avatar[0]})`}"></view>
           <view class="cube__container__body__item cube__container__body__item--back" :style="{backgroundImage: `url(${userInfo.avatar[0]})`}"></view>
@@ -20,7 +20,7 @@
           <view class="cube__container__body__item cube__container__body__item--top" :style="{backgroundImage: `url(${userInfo.avatar[2]})`}"></view>
           <view class="cube__container__body__item cube__container__body__item--bottom" :style="{backgroundImage: `url(${userInfo.avatar[2]})`}"></view>
         </view>
-      </view>
+      </view> -->
       
       
       <view class='tn-text-center tn-margin-top-lg'>
@@ -394,7 +394,7 @@
             'https://resource.tuniaokj.com/images/blogger/blogger_avatar_3.jpeg',
           ],
           username: '菜的一撇的北北吖',
-          desc: '你是不是傻，菜的一撇的北北'
+          desc: '锦衣卫'
         },
         tipsDataMessage: {
           latestMessageUserAvatar: 'https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg',
@@ -409,8 +409,8 @@
             userAvatar: '/static/avator.jpg',
             userName: '菜的一撇的北北吖',
             date: '2021年12月20日',
-            label: ['开源','创意','UI框架'],
-            desc: '开源可商用组件，助你开发酷炫UI一臂之力',
+            label: [' 开心','创意','UI框架'],
+            desc: ' 开心，助你开发酷炫UI一臂之力',
             content: '基础常用的布局元素，酷炫完善的配色体系，统一可增的图标 icon ，简便调用的功能组件，酷炫的前端页面，吖，编不下去了',
             viewUser: {
               latestUserAvatar: [
@@ -429,8 +429,8 @@
             userAvatar: '/static/avator.jpg',
             userName: '菜的一撇的北北吖',
             date: '2021年12月20日',
-            label: ['开源','创意','UI框架'],
-            desc: '开源可商用组件，助你开发酷炫UI一臂之力',
+            label: [' 开心','创意','UI框架'],
+            desc: ' 开心，助你开发酷炫UI一臂之力',
             content: '基础常用的布局元素，酷炫完善的配色体系，统一可增的图标 icon ，简便调用的功能组件，酷炫的前端页面，吖，编不下去了',
             mainImage:[
               'https://resource.tuniaokj.com/images/blogger/content_1.jpeg'
@@ -476,8 +476,8 @@
             userAvatar: '/static/avator.jpg',
             userName: '菜的一撇的北北吖',
             date: '2021年12月20日',
-            label: ['开源','创意'],
-            desc: '开源可商用组件',
+            label: [' 开心','创意'],
+            desc: ' 开心',
             content: '基础常用的布局元素，酷炫完善的配色体系，统一可增的图标 icon ，简便调用的功能组件，酷炫的前端页面，吖，编不下去了 基础常用的布局元素，酷炫完善的配色体系，统一可增的图标 icon ，简便调用的功能组件，酷炫的前端页面，吖，编不下去了',
             mainImage:[
               'https://resource.tuniaokj.com/images/swiper/swiper2.jpg',
@@ -501,8 +501,8 @@
             userAvatar: '/static/avator.jpg',
             userName: '菜的一撇的北北吖',
             date: '2021年12月20日',
-            label: ['开源','链接'],
-            desc: 'https://www.yuque.com/tuniao',
+            label: [' 开心','链接'],
+            desc: '！！！',
             mainImage:[
               'https://resource.tuniaokj.com/images/shop/watch1.jpg',
               'https://resource.tuniaokj.com/images/shop/watch2.jpg',
@@ -526,8 +526,8 @@
             userAvatar: '/static/avator.jpg',
             userName: '菜的一撇的北北吖',
             date: '2021年12月20日',
-            label: ['开源','创意'],
-            desc: '开源可商用组件',
+            label: [' 开心','创意'],
+            desc: ' 开心',
             mainImage:[
               'https://resource.tuniaokj.com/images/blogger/y11.jpg',
               'https://resource.tuniaokj.com/images/blogger/y33.jpg',

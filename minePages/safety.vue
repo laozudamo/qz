@@ -20,7 +20,7 @@
           修改昵称、密码
         </view>
         <view class="tn-margin tn-color-grey--disabled tn-text-lg">
-          你是不是傻，菜的一撇的北北
+          锦衣卫
         </view>
         
         <!-- 切换 -->

@@ -156,7 +156,7 @@
         }, {
           id: 3,
           type: 'image',
-          title: '悄悄开源',
+          title: '悄悄 开心',
           name: '商业合作请联系作者',
           text: '微信号 tnkewo',
           url: 'https://resource.tuniaokj.com/images/swiper/adno3.jpg',

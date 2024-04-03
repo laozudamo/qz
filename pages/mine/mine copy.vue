@@ -214,7 +214,7 @@
 
 
       <!-- 更多信息-->
-      <view class="about-shadow tn-margin-top-xl tn-padding-top-sm tn-padding-bottom-sm">
+      <!-- <view class="about-shadow tn-margin-top-xl tn-padding-top-sm tn-padding-bottom-sm">
         <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="30" @click="tn('/homePages/about')">
           <view class="tn-flex tn-flex-col-center">
             <view
@@ -224,7 +224,7 @@
             <view class="tn-margin-left-sm tn-flex-1">关于 </view>
             <view class="tn-color-cyan--light tn-icon-link"></view>
           </view>
-        </tn-list-cell>
+        </tn-list-cell> -->
         <!-- <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="30" @click="copySource">
           <view class="tn-flex tn-flex-col-center">
             <view

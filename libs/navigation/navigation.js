@@ -154,7 +154,7 @@ export default {
         },
         {
           icon: 'code',
-          title: '开源项目',
+          title: ' 开心项目',
           url: '/activityPages/project',
           author: ' 北北'
         },

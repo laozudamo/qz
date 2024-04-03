@@ -12,10 +12,10 @@
     <view class="tn-safe-area-inset-bottom" :style="{paddingTop: vuex_custom_bar_height + 'px'}">
       
       <view class="tn-margin tn-bg-gray--light" style="border-radius: 10rpx;padding: 20rpx 30rpx;">
-      	<input placeholder="请填写圈子名称 (12字内)" name="input" placeholder-style="color:#AAAAAA" ></input>
+      	<input placeholder="请填写村庄名称 (12字内)" name="input" placeholder-style="color:#AAAAAA" ></input>
       </view>
       <view class="tn-margin tn-bg-gray--light tn-padding" style="border-radius: 10rpx;">
-        <textarea maxlength="500" placeholder="请输入圈子介绍 (500字内)"
+        <textarea maxlength="500" placeholder="请输入村庄介绍 (500字内)"
           placeholder-style="color:#AAAAAA"></textarea>
       </view>
       
@@ -25,8 +25,8 @@
             <text class="tn-icon-image" style="font-size: 30rpx;"></text>
           </view>
           <view class="">
-            <text class="tn-text-lg tn-padding-right-xs tn-text-bold">圈子图片</text>
-            <text class="tn-text-xs tn-padding-right-xs tn-color-grey">首张为圈子头像，长按排序</text>
+            <text class="tn-text-lg tn-padding-right-xs tn-text-bold">村庄图片</text>
+            <text class="tn-text-xs tn-padding-right-xs tn-color-grey">首张为村庄头像，长按排序</text>
           </view>
         </view>
         <view class="justify-content-item tn-text-df tn-color-grey" @tap="clear">
@@ -61,7 +61,7 @@
           <view class="tn-bg-black tn-color-white tn-text-center" style="border-radius: 100rpx;margin-right: 8rpx;width: 45rpx;height: 45rpx;line-height: 45rpx;">
             <text class="tn-icon-location" style="font-size: 30rpx;"></text>
           </view>
-          <view class="tn-text-lg tn-padding-right-xs tn-text-bold">圈子地点</view>
+          <view class="tn-text-lg tn-padding-right-xs tn-text-bold">村庄地点</view>
         </view>
         <view class="justify-content-item tn-text-df tn-color-grey">
           <text class="tn-padding-xs">广东省番禺区祈福新村129号</text>
@@ -74,7 +74,7 @@
           <view class="tn-bg-black tn-color-white tn-text-center" style="border-radius: 100rpx;margin-right: 8rpx;width: 45rpx;height: 45rpx;line-height: 45rpx;">
             <text class="tn-icon-qr-code" style="font-size: 30rpx;"></text>
           </view>
-          <view class="tn-text-lg tn-padding-right-xs tn-text-bold">微信圈子群</view>
+          <view class="tn-text-lg tn-padding-right-xs tn-text-bold">微信村庄群</view>
         </view>
         <view class="justify-content-item tn-text-df tn-color-grey">
           <text class="tn-padding-xs">上传</text>
@@ -87,7 +87,7 @@
           <view class="tn-bg-black tn-color-white tn-text-center" style="border-radius: 100rpx;margin-right: 8rpx;width: 45rpx;height: 45rpx;line-height: 45rpx;">
             <text class="tn-icon-assort" style="font-size: 30rpx;"></text>
           </view>
-          <view class="tn-text-lg tn-padding-right-xs tn-text-bold">圈子分类</view>
+          <view class="tn-text-lg tn-padding-right-xs tn-text-bold">村庄分类</view>
         </view>
         <view class="justify-content-item tn-text-df tn-color-grey">
           <text class="tn-padding-xs">选择</text>

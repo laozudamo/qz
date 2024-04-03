@@ -39,13 +39,13 @@
     <view class="tn-margin">
       <view class="tn-flex tn-flex-row-between">
         <view class="justify-content-item tn-text-bold tn-text-xxl">
-          游在黄姚 ｜ 7天6晚 ｜ 广西三月三
+          阿比安斯马的整套别墅
         </view>
       </view>
       <view class="tn-flex tn-flex-row-between tn-margin-top">
         <view class="justify-content-item tn-text-bold tn-color-purplered">
           <text class="tn-text-sm">￥</text>
-          <text class="" style="font-size: 50rpx">118 / 人</text>
+          <text class="" style="font-size: 50rpx">1999</text>
         </view>
         <view class="justify-content-item tn-color-gray tn-padding-top-xs">
           <view class="">已售 729</view>
@@ -58,29 +58,31 @@
 
     <!-- 更多信息-->
     <view class="tn-padding-top-sm tn-padding-bottom-sm">
-      <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
+      <!-- <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
         <view class="tn-flex tn-flex-col-center">
-          <view class="tn-flex-1">费用</view>
+          <view class="tn-flex-1">空间</view>
           <view class="tn-margin-left-sm" style="font-size: 28rpx"
             >1999 元</view
           >
         </view>
-      </tn-list-cell>
+      </tn-list-cell> -->
 
       <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
         <view class="tn-flex tn-flex-col-center">
-          <view class="tn-flex-1">活动时长</view>
-          <view class="tn-margin-left-sm" style="font-size: 28rpx">7天6晚</view>
+          <view class="tn-flex-1">详情</view>
+          <view class="tn-margin-left-sm" style="font-size: 28rpx"
+            >4 位房客2 间卧室2 张床2 个卫生间</view
+          >
         </view>
       </tn-list-cell>
-      <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
+      <!-- <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
         <view class="tn-flex tn-flex-col-center">
           <view class="tn-flex-1">路程</view>
           <view class="tn-margin-left-sm" style="font-size: 28rpx"
             >1800 km</view
           >
         </view>
-      </tn-list-cell>
+      </tn-list-cell> -->
     </view>
 
     <!-- 边距间隔 -->
@@ -88,9 +90,7 @@
 
     <view class="tn-margin">
       <view class="tn-flex tn-flex-row-between">
-        <view class="justify-content-item tn-text-bold tn-text-xl">
-          产品特色
-        </view>
+        <view class="justify-content-item tn-text-bold tn-text-xl"> 特色 </view>
       </view>
     </view>
 
@@ -109,55 +109,6 @@
 
     <!-- 边距间隔 -->
     <view class="tn-strip-bottom"></view>
-
-    <!-- <view class="tn-margin">
-      <view class="tn-flex tn-flex-row-between">
-        <view class="justify-content-item tn-text-bold tn-text-xl">
-          内容详情
-        </view>
-      </view>
-    </view>
-    
-    <view class="content-backgroup tn-margin">
-      <image src='https://resource.tuniaokj.com/images/content/rodion.jpg' mode='widthFix' class='backgroud-image'></image>
-    </view> -->
-
-    <!-- 边距间隔 -->
-    <!-- <view class="tn-strip-bottom"></view> -->
-
-    <!-- 图标logo/头像 -->
-    <!-- <view class="tn-flex tn-flex-row-between tn-flex-col-center tn-margin" @click="tn('/preferredPages/shop')">
-      <view class="justify-content-item">
-        <view class="tn-flex tn-flex-col-center tn-flex-row-left">
-          <view class="logo-pic tn-shadow">
-            <view class="logo-image">
-              <view class="tn-shadow-blur" style="background-image:url('/static/avator.jpg');width: 110rpx;height: 110rpx;background-size: cover;">
-              </view>
-            </view>
-          </view>
-          <view class="tn-padding-right tn-color-black">
-            <view class="tn-padding-right tn-padding-left-sm tn-text-xl tn-text-bold">
-              抓住那只高产母猪
-            </view>
-            <view class="tn-padding-right tn-padding-top-xs tn-text-ellipsis tn-padding-left-sm">
-              <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-              <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-              <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-              <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-              <text class="tn-color-purplered tn-icon-flower-fill tn-text-lg"></text>
-              <text class="tn-color-brown tn-padding-left-xs tn-text-bold">5.0</text>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="justify-content-item tn-flex-row-center">
-        <view class="tn-cool-bg-color-15 tn-padding-xs tn-color-white tn-round tn-shadow-blur">
-          <text class="tn-padding-left-xs">进店看看</text>
-          <text class="tn-icon-send-fill tn-padding-xs"></text>
-        </view>
-      </view>
-    </view>
-     -->
 
     <!-- 边距间隔 -->
     <view class="tn-strip-bottom"></view>
@@ -183,10 +134,12 @@
       <view class="king-item tn-icon-circle-fill">
         <view class="resume2" style="padding: 20rpx">
           <text class="">
-            《中国国旅官方直营》本行程已超过2000多人的选择，销量对比证明，国旅直营产品更受消费者的厚爱！
-            中国国旅产品承诺：真纯玩+不进任何购物店+餐标全面升级，不是每个产品都可如此承诺
-            《纯玩产品 杜绝山寨 高质/高性价比 贵州精选热门线路》
-            贴心周到的软性的服务！出游有保障！有对比才知道好坏！请游客仔细识别!
+            阿比安斯马，巴厘岛，印度尼西亚
+            您可以在附近享受景点和公共设施，例如： -绿色学校- 5分钟车程 - Kul
+            Kul农场- 5分钟车程 -巴厘岛动物园- 15分钟车程 - Pasar Seni Sukawati -
+            20分钟车程 -隐秘峡谷北极古旺（ Beji Guwang ） - 25分钟车程 -
+            Tegenungan瀑布- 30分钟车程 交通信息
+            我们距离巴厘岛乌布文化中心30分钟车程，距离沙努尔海滩30分钟车程。
           </text>
         </view>
       </view>
@@ -195,14 +148,50 @@
 
     <!-- 同款 -->
     <view class="" v-if="current == 1">
-      <view class="king-item tn-icon-circle-fill">
-        <view class="resume2" style="padding: 20rpx">
-          <text class="">
-            《中国国旅官方直营》本行程已超过2000多人的选择，销量对比证明，国旅直营产品更受消费者的厚爱！
-            中国国旅产品承诺：真纯玩+不进任何购物店+餐标全面升级，不是每个产品都可如此承诺
-            《纯玩产品 杜绝山寨 高质/高性价比 贵州精选热门线路》
-            贴心周到的软性的服务！出游有保障！有对比才知道好坏！请游客仔细识别!
-          </text>
+      <view style="padding: 20rpx">
+        <view style="display: flex">
+          <tn-avatar
+            backgroundColor="#888888"
+            fontColor="#080808"
+            text="Sh"
+          ></tn-avatar>
+          <tn-rate :value="5" activeColor="#EE7B52" :count="5"></tn-rate>
+        </view>
+        <view>
+          非常好的竹屋，与描述中的一样。房东非常热情，服务周到，食物性价比高。
+          但因为是在树林里，依山势而建，不可避免上下的台阶比较多。另外，也不可避免地有比较多蚊虫。
+        </view>
+      </view>
+
+      <view style="padding: 20rpx">
+        <view style="display: flex">
+          <tn-avatar
+            backgroundColor="#EB4F7A"
+            fontColor="#080808"
+            text="LY"
+          ></tn-avatar>
+          <tn-rate :value="5" activeColor="#EE7B52" :count="5"></tn-rate>
+        </view>
+        <view>
+          这可能是我住过最美丽的地方！太棒了！
+          Wayan的团队回复迅速，我可以通过WhatsApp从优秀的咖啡厅订购食物，并将其送到别墅，他们还组织了我们的旅游、交通等。
+          我对住宿、咖啡馆和团队说得再好不够- 5星还不够高！。
+        </view>
+      </view>
+
+      <view style="padding: 20rpx">
+        <view style="display: flex">
+          <tn-avatar
+            backgroundColor="#5172E2"
+            fontColor="#080808"
+            text="王杰"
+          ></tn-avatar>
+          <tn-rate :value="5" activeColor="#EE7B52" :count="5"></tn-rate>
+        </view>
+        <view>
+          我们在Aura house的住宿绝对改变了生活！
+          当我们第一次到达那里时，感觉并不真实，这种感觉也没有消失。 Green
+          Village的团队非常热情，回复您所需的一切。 这个地方真的极度推荐！
         </view>
       </view>
 
@@ -268,7 +257,7 @@ export default {
           title: "",
           name: "",
           text: "",
-          url: "/static/banner/b1.jpeg",
+          url: "/static/hotel/m1d.jpg",
         },
         {
           id: 1,
@@ -276,24 +265,35 @@ export default {
           title: "",
           name: "",
           text: "",
-          url: "/static/banner/b1.jpeg",
+          url: "/static/hotel/m2d.jpg",
         },
         {
-          id: 2,
+          id: 3,
           type: "image",
           title: "海量分享",
           name: "总有你想不到的创意",
           text: "",
-          url: "/static/banner/b2.jpeg",
+          url: "/static/hotel/m3d.jpg",
+        },
+        {
+          id: 4,
+          type: "image",
+          title: "海量分享",
+          name: "总有你想不到的创意",
+          text: "",
+          url: "/static/hotel/m4d.jpg",
+        },
+        {
+          id: 5,
+          type: "image",
+          title: "海量分享",
+          name: "总有你想不到的创意",
+          text: "",
+          url: "/static/hotel/m5d.jpg",
         },
       ],
       current: 0,
-      fixedList: [
-        { name: "行程特色" },
-        { name: "行程简介" },
-        { name: "费用说明" },
-        { name: "行前必看" },
-      ],
+      fixedList: [{ name: "详情" }, { name: "评价" }],
       content: [
         {
           userAvatar:
@@ -1231,47 +1231,47 @@ export default {
         },
       ],
       countOptions: [
-        {
-          icon: "star",
-          text: "收藏",
-        },
-        {
-          icon: "share-circle",
-          text: "分享",
-        },
+        // {
+        //   icon: "star",
+        //   text: "收藏",
+        // },
+        // {
+        //   icon: "share-circle",
+        //   text: "分享",
+        // },
       ],
       customButtonGroups: [
         {
-          text: "咨询客服",
+          text: "咨询",
           backgroundColor: "tn-cool-bg-color-5",
           color: "#FFFFFF",
         },
         {
-          text: "立即购买",
+          text: "立即预定",
           backgroundColor: "tn-cool-bg-color-15--reverse",
           color: "#FFFFFF",
         },
       ],
       tagList: [
         {
-          color: "red",
-          title: "全程零购物",
+          color: "gray",
+          title: "OMG民宿",
         },
         {
-          color: "cyan",
-          title: "骑大象",
+          color: "gray",
+          title: "超赞房东",
         },
         {
-          color: "blue",
-          title: "泼水节",
+          color: "gray",
+          title: "7月29日前免费取消",
         },
         {
-          color: "green",
-          title: "壮丽山水",
+          color: "gray",
+          title: "入住便捷",
         },
         {
-          color: "orange",
-          title: "北国风光",
+          color: "gray",
+          title: "空调",
         },
       ],
     };

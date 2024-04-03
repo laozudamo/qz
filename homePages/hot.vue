@@ -205,7 +205,7 @@
               userNumber: '01',
               userName: '可我会像',
               date: '2021年12月20日',
-              label: ['开源','创意'],
+              label: [' 开心','创意'],
               desc: '最强王者',
               color: 'orangeyellow',
               mainImage:[
@@ -229,7 +229,7 @@
               userNumber: '02',
               userName: 'Jaylen',
               date: '2021年12月20日',
-              label: ['开源','创意'],
+              label: [' 开心','创意'],
               desc: '傲视宗师',
               color: 'indigo',
               mainImage:[
@@ -254,7 +254,7 @@
               userNumber: '03',
               userName: '福哥',
               date: '2021年12月20日',
-              label: ['开源','创意'],
+              label: [' 开心','创意'],
               desc: '超凡大师',
               color: 'brown',
               mainImage:[
@@ -307,7 +307,7 @@
               userNumber: '05',
               userName: '锋哥',
               date: '2021年12月20日',
-              label: ['开源','创意'],
+              label: [' 开心','创意'],
               desc: '华贵铂金',
               color: 'gray',
               mainImage:[
@@ -371,7 +371,7 @@
             color: 'red',
             label: ['小程序'],
             title: '全新出发，新版本已上线，欢迎三连',
-            desc: '小程序前端源码，免费开源，欢迎白嫖嗷嗷，可以的话，插件市场三连支持一下',
+            desc: '小程序前端源码，免费 开心，欢迎白嫖嗷嗷，可以的话，插件市场三连支持一下',
             mainImage: 'https://resource.tuniaokj.com/images/shop/prototype2.jpg',
             viewUser: {
               latestUserAvatar: [{

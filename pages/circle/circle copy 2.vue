@@ -1,6 +1,46 @@
 <template>
   <view class="template-circle tn-safe-area-inset-bottom">
     <!-- 顶部自定义导航 -->
+    <!-- <tn-nav-bar :isBack="false" :bottomShadow="false" backgroundColor="none">
+      <view class="custom-nav tn-flex tn-flex-col-center tn-flex-row-left">
+        <view class="custom-nav__back" @click="tn('/circlePages/blogger')">
+          <view
+            class="logo-pic tn-shadow-blur"
+            style="
+              background-image: url('https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg');
+            "
+          >
+            <view class="logo-image">
+              <tn-badge
+                backgroundColor="#E72F8C"
+                :dot="true"
+                :radius="16"
+                :absolute="true"
+                :translateCenter="false"
+              ></tn-badge>
+            </view>
+          </view>
+        </view>
+        <view
+          class="tn-margin-top tn-margin-left"
+          style="
+            text-shadow: 1rpx 0 0 #fff, 0 1rpx 0 #fff, -1rpx 0 0 #fff,
+              0 -1rpx 0 #fff;
+          "
+        >
+          <tn-tabs
+            :list="scrollList"
+            :current="current"
+            @change="tabChange"
+            activeColor="#000"
+            :bold="true"
+            :fontSize="36"
+          ></tn-tabs>
+        </view>
+      </view>
+    </tn-nav-bar> -->
+    <!-- 发现 -->
+
     <swiper
       class="card-swiper"
       @click="tn('/homePages/navigation')"
@@ -152,6 +192,7 @@
           </view>
         </view>
       </view>
+
       <view class="tn-tabbar-height"></view>
     </view>
 

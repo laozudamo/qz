@@ -194,8 +194,8 @@
             userAvatar: 'https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg',
             userName: '可我会像',
             date: '2021年12月20日',
-            label: ['开源','创意'],
-            desc: '开源可商用组件',
+            label: [' 开心','创意'],
+            desc: ' 开心',
             mainImage:[
               'https://resource.tuniaokj.com/images/shop/prototype1.jpg',
             ],
@@ -216,8 +216,8 @@
             userAvatar: 'https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg',
             userName: '可我会像',
             date: '2021年12月20日',
-            label: ['开源','创意'],
-            desc: '开源可商用组件',
+            label: [' 开心','创意'],
+            desc: ' 开心',
             mainImage:[
               'https://resource.tuniaokj.com/images/shop/prototype2.jpg',
             ],
@@ -238,8 +238,8 @@
             userAvatar: 'https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg',
             userName: '可我会像',
             date: '2021年12月20日',
-            label: ['开源','创意'],
-            desc: '开源可商用组件',
+            label: [' 开心','创意'],
+            desc: ' 开心',
             mainImage:[
               'https://resource.tuniaokj.com/images/shop/computer2.jpg',
             ],
@@ -261,7 +261,7 @@
             userName: '可我会像',
             date: '2021年12月20日',
             label: ['站点','链接'],
-            desc: 'https://www.yuque.com/tuniao',
+            desc: '！！！',
             mainImage:[
               'https://resource.tuniaokj.com/images/shop/pillow2.jpg',
             ],
@@ -282,8 +282,8 @@
             userAvatar: '/static/avator.jpg',
             userName: '可我会像',
             date: '2021年12月20日',
-            label: ['开源','创意'],
-            desc: '开源可商用组件',
+            label: [' 开心','创意'],
+            desc: ' 开心',
             mainImage:[
               'https://resource.tuniaokj.com/images/shop/phonecase1.jpg',
             ],

@@ -11,7 +11,7 @@
     
     <view class="tn-text-center tn-margin tn-text-lg plus-box" :style="{paddingTop: vuex_custom_bar_height + 'px'}">
       <view class="plus-text">
-        <view class="tn-text-bold"> 模板小程序，开源啦</view>
+        <view class="tn-text-bold"> 模板小程序， 开心啦</view>
         <view class="tn-margin-bottom-xl">（会员有更多福利鸭）</view>
       </view>
       
@@ -56,7 +56,7 @@
       
       <view class="plus-text">
         <view class="tn-text-bold">使用手册 + 图片素材 + 意见反馈 + Bug提交</view>
-        <view class="tn-margin-bottom-xl" @click="copyYuque">（https://www.yuque.com/tuniao）</view>
+        <view class="tn-margin-bottom-xl" @click="copyYuque">（！！！）</view>
       </view>
       
       <view class="plus-text">
@@ -111,7 +111,7 @@
       // 复制语雀地址
       copyYuque() {
         uni.setClipboardData({
-          data: "https://www.yuque.com/tuniao",
+          data: "！！！",
         })
       },
       // 复制微信号

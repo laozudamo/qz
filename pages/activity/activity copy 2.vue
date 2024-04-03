@@ -1,5 +1,5 @@
 <template>
-  <view class="template-blogger tn-safe-area-inset-bottom the-page">
+  <view class="template-blogger tn-safe-area-inset-bottom">
     <!-- 顶部自定义导航 -->
     <tn-nav-bar fixed alpha customBack>
       <view slot="back" class="tn-custom-nav-bar__back" @click="goBack">
@@ -13,6 +13,7 @@
       class="cube"
       :style="'background-image: url(https://resource.tuniaokj.com/images/blogger/bg_image_1.jpg);'"
     >
+
       <view class="tn-text-center tn-margin-top-lg">
         <view class="tn-padding tn-text-bold tn-text-lg">{{
           userInfo.username
@@ -452,67 +453,26 @@
       </block>
     </view>
 
-    <!-- 压屏窗-->
-    <tn-landscape
-      :show="show2"
-      @close="closeLandscape"
-      closePosition="bottom"
-      :closeSize="60"
-    >
-      <!-- 方式9 start-->
-      <view class="tn-flex" style="margin-bottom: 100rpx; padding-top: 46vh">
-        <view class="tn-flex-1 tn-margin-sm tn-radius" @click="navEdit">
-          <view
-            class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
-          >
-            <view
-              class="icon9__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-bg-red tn-color-white"
-            >
-              <view class="tn-icon-camera-fill"></view>
-            </view>
-            <view class="tn-color-white tn-text-sm tn-text-center">
-              <text class="tn-text-ellipsis">发布动态</text>
-            </view>
-          </view>
-        </view>
-        <!-- <view class="tn-flex-1 tn-margin-sm tn-radius" @click="navCreate">
-          <view
-            class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
-          >
-            <view
-              class="icon9__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-bg-cyan tn-color-white"
-            >
-              <view class="tn-icon-flag-fill"></view>
-            </view>
-            <view class="tn-color-white tn-text-sm tn-text-center">
-              <text class="tn-text-ellipsis">发起活动</text>
-            </view>
-          </view>
-        </view>
-        <view class="tn-flex-1 tn-margin-sm tn-radius" @click="navBuild">
-          <view
-            class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
-          >
-            <view
-              class="icon9__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-bg-blue tn-color-white"
-            >
-              <view class="tn-icon-topics-fill"></view>
-            </view>
-            <view class="tn-color-white tn-text-sm tn-text-center">
-              <text class="tn-text-ellipsis">创建村庄</text>
-            </view>
-          </view>
-        </view> -->
+    <!-- 悬浮按钮-->
+    <!-- <view class="tn-flex tn-flex-row-between tn-footerfixed">
+      <view class="tn-flex-1 justify-content-item tn-margin-xs tn-text-center">
+        <tn-button backgroundColor="#00FFC6" padding="40rpx 0" width="90%" shadow fontBold>
+          <text class="tn-icon-add tn-padding-right-xs tn-color-black"></text>
+          <text class="tn-color-black">关 注</text>
+        </tn-button>
       </view>
-    </tn-landscape>
+      <view class="tn-flex-1 justify-content-item tn-margin-xs tn-text-center">
+        <tn-button backgroundColor="#FFF00D" padding="40rpx 0" width="90%" shadow fontBold open-type="share">
+          <text class="tn-icon-share-triangle tn-padding-right-xs tn-color-black"></text>
+          <text class="tn-color-black">分 享</text>
+        </tn-button>
+      </view>
+    </view> -->
 
-    <view class="edit tnxuanfu" @tap="showLandscape">
+    <!-- <view class="edit tnxuanfu" @click="navEdit">
       <view class="bg0 pa">
         <view class="bg1">
-          <image
-            src="https://resource.tuniaokj.com/images/my/my6.png"
-            class="button-shop shadow"
-          ></image>
+          <image src="https://resource.tuniaokj.com/images/my/my6.png" class="button-shop shadow"></image>
         </view>
       </view>
       <view class="hx-box pa">
@@ -537,7 +497,7 @@
           </view>
         </view>
       </view>
-    </view>
+    </view> -->
   </view>
 </template>
 
@@ -570,7 +530,8 @@ export default {
       },
       content: [
         {
-          userAvatar: "/static/avator.jpg",
+          userAvatar:
+            "/static/avator.jpg",
           userName: "你吃饭了没",
           date: "2021年12月20日",
           label: ["不错啊", "创意", "UI框架"],
@@ -599,7 +560,8 @@ export default {
           likeCount: 83,
         },
         {
-          userAvatar: "/static/avator.jpg",
+          userAvatar:
+            "/static/avator.jpg",
           userName: "你的名字",
           date: "2021年12月20日",
           label: ["不错啊", "创意", "UI框架"],
@@ -631,7 +593,8 @@ export default {
           likeCount: 83,
         },
         {
-          userAvatar: "/static/avator.jpg",
+          userAvatar:
+            "/static/avator.jpg",
           userName: " 北北",
           date: "2021年12月20日",
           label: [],
@@ -663,7 +626,8 @@ export default {
           likeCount: 84,
         },
         {
-          userAvatar: "/static/avator.jpg",
+          userAvatar:
+            "/static/avator.jpg",
           userName: " 北北",
           date: "2021年12月20日",
           label: ["不错啊", "创意"],
@@ -697,7 +661,8 @@ export default {
           likeCount: 82,
         },
         {
-          userAvatar: "/static/avator.jpg",
+          userAvatar:
+            "/static/avator.jpg",
           userName: " 北北",
           date: "2021年12月20日",
           label: ["不错啊", "链接"],
@@ -730,7 +695,8 @@ export default {
           likeCount: 12,
         },
         {
-          userAvatar: "/static/avator.jpg",
+          userAvatar:
+            "/static/avator.jpg",
           userName: " 北北",
           date: "2021年12月20日",
           label: ["不错啊", "创意"],
@@ -773,7 +739,6 @@ export default {
         { image: "https://resource.tuniaokj.com/images/swiper/ad5.jpg" },
       ],
       adAutoplay: false,
-      show2: false,
     };
   },
   computed: {
@@ -832,19 +797,6 @@ export default {
     this.adAutoplay = false;
   },
   methods: {
-    // 弹出压屏窗
-    showLandscape() {
-      this.openLandscape();
-    },
-    // 打开压屏窗
-    openLandscape() {
-      // wx.vibrateLong();
-      this.show2 = true;
-    },
-    // 关闭压屏窗
-    closeLandscape() {
-      this.show2 = false;
-    },
     // 跳转
     tn(e) {
       uni.navigateTo({
@@ -1413,80 +1365,4 @@ $cube-split: 60rpx;
 .hx-k6 {
   transform: rotateX(90deg) rotateZ(90deg);
 }
-
-
-/* 图标容器9 start */
-.icon9 {
-  &__item {
-    width: 30%;
-    background-color: #ffffff;
-    border-radius: 10rpx;
-    padding: 30rpx;
-    margin: 20rpx 10rpx;
-    transform: scale(1);
-    transition: transform 0.3s linear;
-    transform-origin: center center;
-
-    &--icon {
-      width: 110rpx;
-      height: 110rpx;
-      font-size: 65rpx;
-      border-radius: 50%;
-      margin: 20rpx 40rpx;
-      position: relative;
-      z-index: 1;
-
-      &::after {
-        content: " ";
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        bottom: 0;
-        border-radius: inherit;
-        opacity: 1;
-        transform: scale(1, 1);
-        background-size: 100% 100%;
-        background-image: url(https://resource.tuniaokj.com/images/cool_bg_image/icon_bg5.png);
-      }
-    }
-  }
-}
-
-/* 悬浮 */
-.tnxuanfu {
-  animation: suspension 3s ease-in-out infinite;
-}
-
-@keyframes suspension {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-0.8rem);
-  }
-}
-/* 悬浮按钮 */
-.button-shop {
-  width: 90rpx;
-  height: 90rpx;
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  /* bottom:200rpx;
-      right: 20rpx; */
-  left: 5rpx;
-  top: 5rpx;
-  z-index: 1001;
-  border-radius: 100px;
-  opacity: 0.9;
-}
-
-.the-page {
-  height: calc(100vn - 200rpx);
-  overflow-y: auto;
-}
-
 </style>

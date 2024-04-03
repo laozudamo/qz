@@ -65,7 +65,7 @@
             color: 'red',
             label: ['小程序'],
             title: '全新出发，新版本已上线，欢迎三连',
-            desc: '小程序前端源码，免费开源，欢迎白嫖嗷嗷，可以的话，插件市场三连支持一下',
+            desc: '小程序前端源码，免费 开心，欢迎白嫖嗷嗷，可以的话，插件市场三连支持一下',
             mainImage: 'https://resource.tuniaokj.com/images/shop/prototype2.jpg',
             viewUser: {
               latestUserAvatar: [{

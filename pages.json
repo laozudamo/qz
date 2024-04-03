@@ -124,7 +124,7 @@
         {
           "path": "group",
           "style": {
-            "navigationBarTitleText": "精选圈子",
+            "navigationBarTitleText": "广场",
             "enablePullDownRefresh": false
           }
         },
@@ -206,7 +206,7 @@
         {
           "path": "project",
           "style": {
-            "navigationBarTitleText": "开源项目",
+            "navigationBarTitleText": " 开心项目",
             "enablePullDownRefresh": false
           }
         },
@@ -389,13 +389,6 @@
           }
         },
         {
-          "path": "reward",
-          "style": {
-            "navigationBarTitleText": "赞赏作者",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
           "path": "content",
           "style": {
             "navigationBarTitleText": "富文本",
@@ -411,6 +404,20 @@
           "path": "moment",
           "style": {
             "navigationBarTitleText": "动态",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "bookHotel",
+          "style": {
+            "navigationBarTitleText": "民宿",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "hotelDetail",
+          "style": {
+            "navigationBarTitleText": "详情",
             "enablePullDownRefresh": false
           }
         }

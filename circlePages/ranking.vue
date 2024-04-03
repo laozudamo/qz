@@ -185,7 +185,7 @@
             userNumber: '01',
             userName: '可我会像',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '最强王者',
             color: 'orangeyellow',
             mainImage:[
@@ -209,7 +209,7 @@
             userNumber: '02',
             userName: 'Jaylen',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '傲视宗师',
             color: 'indigo',
             mainImage:[
@@ -234,7 +234,7 @@
             userNumber: '03',
             userName: '福哥',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '超凡大师',
             color: 'brown',
             mainImage:[
@@ -287,7 +287,7 @@
             userNumber: '05',
             userName: '锋哥',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '华贵铂金',
             color: 'grey',
             mainImage:[
@@ -315,7 +315,7 @@
             userNumber: '05',
             userName: '你的名字',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '荣耀黄金',
             color: 'grey',
             mainImage:[
@@ -343,7 +343,7 @@
             userNumber: '07',
             userName: '北北猪吖',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '不屈白银',
             color: 'grey',
             mainImage:[
@@ -371,7 +371,7 @@
             userNumber: '08',
             userName: '北北猪吖',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '英勇黄铜',
             color: 'grey',
             mainImage:[
@@ -399,7 +399,7 @@
             userNumber: '09',
             userName: '北北猪吖',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '坚韧黑铁',
             color: 'grey',
             mainImage:[
@@ -427,7 +427,7 @@
             userNumber: '10',
             userName: '北北猪吖',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '暂无段位',
             color: 'grey',
             mainImage:[
@@ -455,7 +455,7 @@
             userNumber: '11',
             userName: '北北猪吖',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '暂无段位',
             color: 'grey',
             mainImage:[
@@ -483,7 +483,7 @@
             userNumber: '12',
             userName: '北北猪吖',
             date: '2021年12月20日',
-            label: ['开源','创意'],
+            label: [' 开心','创意'],
             desc: '暂无段位',
             color: 'grey',
             mainImage:[
