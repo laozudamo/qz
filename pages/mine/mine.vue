@@ -2,18 +2,14 @@
   <view class="template-mine tn-safe-area-inset-bottom">
     <!-- 顶部自定义导航 -->
     <tn-nav-bar :isBack="false" :bottomShadow="false" backgroundColor="none">
-      <view
+      <!-- <view
         class="custom-nav tn-flex tn-flex-col-center tn-flex-row-left"
         @click="tn('/minePages/message')"
       >
         <view class="custom-nav__back">
           <view class="tn-icon-notice tn-color-brown" style="font-size: 50rpx">
-            <!-- <tn-badge backgroundColor="#E72F8C" fontColor="#FFFFFF" :absolute="true" :translateCenter="false">
-              <text>12</text>
-            </tn-badge> -->
-          </view>
         </view>
-      </view>
+      </view> -->
     </tn-nav-bar>
 
     <view class="top-backgroup">
@@ -171,7 +167,7 @@
                 <view class="tn-icon-caring" style="color: #080808"></view>
               </view>
               <view class="tn-text-center">
-                <text class="tn-text-ellipsis">我的圈子</text>
+                <text class="tn-text-ellipsis">我的动态</text>
               </view>
             </view>
           </view>
@@ -258,7 +254,7 @@
                 <view class="tn-icon-star" style="color: #080808"></view>
               </view>
               <view class="tn-text-center">
-                <text class="tn-text-ellipsis">好物收藏</text>
+                <text class="tn-text-ellipsis">收藏</text>
               </view>
             </view>
           </view>
@@ -349,7 +345,7 @@
             </view>
           </button>
         </tn-list-cell> -->
-        <tn-list-cell
+        <!-- <tn-list-cell
           :hover="true"
           :unlined="true"
           :radius="true"
@@ -369,7 +365,7 @@
               <view class="tn-color-green--light tn-icon-edit"></view>
             </view>
           </button>
-        </tn-list-cell>
+        </tn-list-cell> -->
 
         <tn-list-cell
           :hover="true"
@@ -385,7 +381,7 @@
             >
               <view class="tn-icon-phone-fill"></view>
             </view>
-            <view class="tn-margin-left-sm tn-flex-1">技术支持</view>
+            <view class="tn-margin-left-sm tn-flex-1">联系客服</view>
             <view
               class="tn-margin-left-sm tn-color-orangered tn-text-sm tn-padding-left-xs tn-padding-right-xs tn-bg-orange--disabled tn-round"
             >

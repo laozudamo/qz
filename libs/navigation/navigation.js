@@ -37,7 +37,7 @@ export default {
       ]
     },
     {
-      title: '酷炫圈子',
+      title: '酷炫乡村游',
       backgroundColor: 'tn-cool-bg-color-1',
       list: [{
           icon: 'code',
@@ -83,7 +83,7 @@ export default {
         },
         {
           icon: 'code',
-          title: '精选圈子',
+          title: '精选乡村游',
           url: '/circlePages/group',
           author: ' 北北'
         },
@@ -95,7 +95,7 @@ export default {
         },
         {
           icon: 'code',
-          title: '圈子详情',
+          title: '乡村游详情',
           url: '/circlePages/details',
           author: ' 北北'
         },
@@ -113,7 +113,7 @@ export default {
         },
         {
           icon: 'code',
-          title: '打造圈子',
+          title: '打造乡村游',
           url: '/circlePages/build',
           author: ' 北北'
         },

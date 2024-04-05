@@ -138,7 +138,7 @@
         {
           "path": "details",
           "style": {
-            "navigationBarTitleText": "圈子详情",
+            "navigationBarTitleText": "乡村游详情",
             "enablePullDownRefresh": false
           }
         },
@@ -159,7 +159,7 @@
         {
           "path": "build",
           "style": {
-            "navigationBarTitleText": "打造圈子",
+            "navigationBarTitleText": "打造乡村游",
             "enablePullDownRefresh": false
           }
         },
@@ -462,6 +462,20 @@
             "navigationBarTitleText": "精选村庄",
             "enablePullDownRefresh": false
           }
+        },
+        {
+          "path": "bookTicket",
+          "style": {
+            "navigationBarTitleText": "门票预订",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "ticketDetail",
+          "style": {
+            "navigationBarTitleText": "详情",
+            "enablePullDownRefresh": false
+          }
         }
       ]
     }
@@ -469,7 +483,7 @@
   "globalStyle": {
     "navigationStyle": "custom",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": " UI+圈子",
+    "navigationBarTitleText": " UI+乡村游",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   }

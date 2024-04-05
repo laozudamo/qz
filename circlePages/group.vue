@@ -40,7 +40,7 @@
               </view>
               <view class="tn-padding-right tn-padding-top-xs tn-text-ellipsis tn-padding-left-sm tn-text-sm">
                 <text class="tn-padding-right-sm">快到碗里来</text>
-                <text>二次元大大的福利圈子</text>
+                <text>二次元大大的福利乡村游</text>
               </view>
             </view>
           </view>
@@ -57,7 +57,7 @@
     <tn-modal v-model="show1" :custom="true">
       <view class="custom-modal-content">
         <image @tap="previewQRCodeImage" src='https://baike.baidu.com/item/%E4%BA%8C%E7%BB%B4%E7%A0%81/2385673' mode='aspectFill' style="width: 100%;"></image>
-        <view class="tn-text-center tn-padding-top">欢迎加入【热血动漫】圈子群</view>
+        <view class="tn-text-center tn-padding-top">欢迎加入【热血动漫】乡村游群</view>
         <view class="tn-text-center tn-padding-top tn-text-lg">点击上图，可识别微信二维码</view>
       </view>
     </tn-modal>
@@ -439,7 +439,7 @@
       		url: e,
       	});
       },
-      // 预览圈子管理员微信图片
+      // 预览乡村游管理员微信图片
       previewQRCodeImage() {
         wx.previewImage({
           urls: ['https://baike.baidu.com/item/%E4%BA%8C%E7%BB%B4%E7%A0%81/2385673']

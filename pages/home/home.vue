@@ -226,7 +226,7 @@
     <view class="tn-flex tn-margin-xs">
       <view
         class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius"
-        @click="tn('/homePages/hot')"
+        @click="tn('/moment/bookTicket')"
       >
         <view
           class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"

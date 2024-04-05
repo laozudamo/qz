@@ -185,9 +185,7 @@
           url: 'https://resource.tuniaokj.com/images/new/banner1.jpg',
         }],
         list: [
-          '感谢内测群的20位小伙伴，感谢他们的不杀之恩！',
-          '感谢DCloud以及Gitee官方的鼓励和认可！',
-          '感谢各位开发者的问题反馈和慷慨赞赏！'
+          '测试',
         ],
         content: [
           {

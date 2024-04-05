@@ -29,7 +29,7 @@
       
       <view class="plus-text">
         <view class="tn-text-bold">请勿转售，转售是会慢慢追究法律责任的</view>
-        <view class="tn-margin-bottom-xl">（毕竟开发圈子就那么小）</view>
+        <view class="tn-margin-bottom-xl">（毕竟开发乡村游就那么小）</view>
       </view>
       
       <view class="plus-text">
