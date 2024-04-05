@@ -96,7 +96,7 @@
         <view class="nav_title--wrap">
           <view class="nav_title tn-cool-bg-color-15">
             <text class="tn-icon-sword tn-padding-right-sm tn-text-xxl"></text>
-            <text class="tn-text-xl">战力榜单 · 全球排行</text>
+            <text class="tn-text-xl">排行</text>
             <text class="tn-icon-sword tn-padding-left-sm tn-text-xxl"></text>
           </view>
         </view>

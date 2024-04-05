@@ -831,7 +831,7 @@ export default {
           userName: "可我会像",
           date: "2021年12月20日",
           label: ["站点", "链接"],
-          desc: "https://www.yuque.com/tuniao",
+          desc: "https://www.yuque.com",
           mainImage: [
             "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
           ],
