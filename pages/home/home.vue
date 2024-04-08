@@ -67,7 +67,8 @@
           >
           <view
             class="tn-text-sm tn-text-bold tn-color-white tn-padding-top-sm tn-padding-bottom-sm"
-            >{{ item.text }}</view
+          >
+            {{ item.text }}</view
           >
         </view>
       </swiper-item>
@@ -387,7 +388,9 @@
                 class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
               >
                 <view class="">
-                  <view class="tn-text-xxl tn-color-blue">{{ item.hot }}</view>
+                  <view class="tn-text-xxl tn-color-blue">{{
+                    item.fanCount
+                  }}</view>
                 </view>
                 <view
                   class="tn-margin-top-xs tn-color-grey tn-text-df tn-text-center"
@@ -397,7 +400,7 @@
                 </view>
               </view>
             </view>
-            <view
+            <!-- <view
               class="tn-flex-1 tn-padding-sm tn-margin-left tn-margin-right"
             >
               <view
@@ -415,13 +418,15 @@
                   <text class="tn-padding-left-xs">分享</text>
                 </view>
               </view>
-            </view>
+            </view> -->
             <view class="tn-flex-1 tn-padding-sm tn-margin-left">
               <view
                 class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
               >
                 <view class="">
-                  <view class="tn-text-xxl tn-color-red">{{ item.love }}</view>
+                  <view class="tn-text-xxl tn-color-red">{{
+                    item.likeCount
+                  }}</view>
                 </view>
                 <view
                   class="tn-margin-top-xs tn-color-grey tn-text-df tn-text-center"
@@ -651,6 +656,7 @@
 </template>
 
 <script>
+import { getList } from "@/api/index.js";
 export default {
   name: "Index",
   data() {
@@ -684,63 +690,64 @@ export default {
         },
       ],
       cardCur2: 0,
-      resumeList: [
-        {
-          id: 0,
-          type: "image",
-          title: "李家庄",
-          name: "生态庄园",
-          hot: "1.29W",
-          share: "216",
-          love: "962",
-          avatar: "/static/avator.jpg",
-          url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
-        },
-        {
-          id: 1,
-          type: "image",
-          title: "高老屯",
-          name: "你的梦中情屯",
-          hot: "964",
-          share: "94",
-          love: "186",
-          avatar: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          url: "https://resource.tuniaokj.com/images/resume/resume-bg2.jpg",
-        },
-        {
-          id: 2,
-          type: "image",
-          title: "高老屯",
-          name: "你的梦中情屯",
-          hot: "3.26K",
-          share: "146",
-          love: "379",
-          avatar: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-          url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
-        },
-        {
-          id: 3,
-          type: "image",
-          title: "高老屯",
-          name: "你的梦中情屯",
-          hot: "6.32K",
-          share: "133",
-          love: "432",
-          avatar: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-          url: "https://resource.tuniaokj.com/images/resume/resume-bg2.jpg",
-        },
-        {
-          id: 4,
-          type: "image",
-          title: "高老屯",
-          name: "你的梦中情屯",
-          hot: "8.65K",
-          share: "321",
-          love: "886",
-          avatar: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-          url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
-        },
-      ],
+      resumeList: [],
+      // resumeList: [
+      //   {
+      //     id: 0,
+      //     type: "image",
+      //     title: "李家庄",
+      //     name: "生态庄园",
+      //     hot: "1.29W",
+      //     share: "216",
+      //     love: "962",
+      //     avatar: "/static/avator.jpg",
+      //     url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
+      //   },
+      //   {
+      //     id: 1,
+      //     type: "image",
+      //     title: "高老屯",
+      //     name: "你的梦中情屯",
+      //     hot: "964",
+      //     share: "94",
+      //     love: "186",
+      //     avatar: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     url: "https://resource.tuniaokj.com/images/resume/resume-bg2.jpg",
+      //   },
+      //   {
+      //     id: 2,
+      //     type: "image",
+      //     title: "高老屯",
+      //     name: "你的梦中情屯",
+      //     hot: "3.26K",
+      //     share: "146",
+      //     love: "379",
+      //     avatar: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
+      //     url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
+      //   },
+      //   {
+      //     id: 3,
+      //     type: "image",
+      //     title: "高老屯",
+      //     name: "你的梦中情屯",
+      //     hot: "6.32K",
+      //     share: "133",
+      //     love: "432",
+      //     avatar: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
+      //     url: "https://resource.tuniaokj.com/images/resume/resume-bg2.jpg",
+      //   },
+      //   {
+      //     id: 4,
+      //     type: "image",
+      //     title: "高老屯",
+      //     name: "你的梦中情屯",
+      //     hot: "8.65K",
+      //     share: "321",
+      //     love: "886",
+      //     avatar: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
+      //     url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
+      //   },
+      // ],
 
       content: [
         {
@@ -905,6 +912,22 @@ export default {
     };
   },
   created() {
+    console.log("created");
+
+    let data = {
+      // orderByAsc: true,
+      pageIndex: 1,
+      pageSize: 50,
+      // keyword: "",
+    };
+
+    getList(data).then((res) => {
+      console.log(res);
+      const { list } = res;
+      this.resumeList = list;
+    });
+    // this.getList();
+
     const systemInfo = uni.getSystemInfoSync();
     if (systemInfo.system.toLocaleLowerCase().includes("ios")) {
       this.isAndroid = false;
@@ -912,6 +935,7 @@ export default {
       this.isAndroid = true;
     }
   },
+
   methods: {
     // cardSwiper
     cardSwiper(e) {
@@ -935,6 +959,7 @@ export default {
 .template-index {
   max-height: 100vh;
 }
+
 .tn-tabbar-height {
   min-height: 100rpx;
   height: calc(120rpx + env(safe-area-inset-bottom) / 2);
@@ -995,6 +1020,7 @@ export default {
   align-items: center;
   justify-content: center;
 }
+
 .image-banner image {
   width: 100%;
   height: 100%;
@@ -1125,6 +1151,7 @@ export default {
   text-shadow: -1rpx 2rpx 0 #f0f0f0, -2rpx 4rpx 0 #f0f0f0,
     -10rpx 20rpx 30rpx rgba(0, 0, 0, 0.2);
 }
+
 .icon12 {
   &__item {
     width: 30%;
@@ -1200,11 +1227,13 @@ export default {
     }
   }
 }
+
 .logo-image {
   width: 65rpx;
   height: 65rpx;
   position: relative;
 }
+
 .logo-pic {
   background-size: cover;
   background-repeat: no-repeat;
@@ -1212,6 +1241,7 @@ export default {
   background-position: top;
   border-radius: 50%;
 }
+
 /* 自定义导航栏内容 end */
 
 /* 热门图片 start*/
@@ -1221,18 +1251,21 @@ export default {
   font-weight: 300;
   position: relative;
 }
+
 .image-tuniao2 {
   padding: 75rpx 0rpx;
   font-size: 40rpx;
   font-weight: 300;
   position: relative;
 }
+
 .image-tuniao3 {
   padding: 90rpx 0rpx;
   font-size: 40rpx;
   font-weight: 300;
   position: relative;
 }
+
 .image-pic {
   background-size: cover;
   background-repeat: no-repeat;
@@ -1240,6 +1273,7 @@ export default {
   background-position: top;
   border-radius: 10rpx;
 }
+
 /* 胶囊banner*/
 .image-capsule {
   padding: 100rpx 0rpx;
@@ -1247,6 +1281,7 @@ export default {
   font-weight: 300;
   position: relative;
 }
+
 .image-piccapsule {
   background-size: cover;
   background-repeat: no-repeat;
@@ -1272,6 +1307,7 @@ export default {
     background-size: cover;
   }
 }
+
 /* 标题 end */
 
 /* 业务展示 start */
@@ -1355,6 +1391,7 @@ export default {
         opacity: 0.15;
       }
     }
+
     &__bottom {
       box-shadow: 0rpx 0rpx 30rpx 0rpx rgba(0, 0, 0, 0.12);
       border-radius: 0 0 10rpx 10rpx;
@@ -1369,6 +1406,7 @@ export default {
     }
   }
 }
+
 /* 业务展示 end */
 
 /* 底部tabbar start*/
@@ -1413,6 +1451,7 @@ export default {
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-0.8rem);
   }
@@ -1543,6 +1582,7 @@ export default {
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-0.6rem);
   }
@@ -1570,6 +1610,7 @@ export default {
   font-weight: 300;
   position: relative;
 }
+
 .image-picbook {
   background-size: cover;
   background-repeat: no-repeat;
@@ -1577,6 +1618,7 @@ export default {
   background-position: top;
   border-radius: 15rpx 15rpx 0 0;
 }
+
 .tn-blogger-content__wrap {
   padding: 10rpx;
 }

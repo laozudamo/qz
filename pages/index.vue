@@ -134,6 +134,8 @@ export default {
       return index === tabbar_index;
     });
     this.switchTabbar(index);
+
+
   },
   methods: {
     // 切换导航
