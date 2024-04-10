@@ -8,7 +8,7 @@
       </view>
     </tn-nav-bar>
 
-    <img width="100%" height="200" :src="theData.image" />
+    <img width="100%" height="200" :src="theData.imageUrl" />
     <view class="indication">
       <block v-for="(item, index) in swiperList" :key="index">
         <view class="spot" :class="cardCur == index ? 'active' : ''"></view>
@@ -24,12 +24,10 @@
       <view class="tn-flex tn-flex-row-between tn-margin-top">
         <view class="justify-content-item tn-text-bold tn-color-purplered">
           <text class="tn-text-sm">￥</text>
-          <text class="" style="font-size: 50rpx"
-            >{{ theData.price }} / 人</text
-          >
+          <text class="" style="font-size: 50rpx">{{ theData.price }}</text>
         </view>
         <view class="justify-content-item tn-color-gray tn-padding-top-xs">
-          <view class="">已售 {{ theData.soldOutQuantity }}</view>
+          <view class="">已售 {{ theData.quantity }}</view>
         </view>
       </view>
     </view>
@@ -41,100 +39,39 @@
     <view class="tn-padding-top-sm tn-padding-bottom-sm">
       <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
         <view class="tn-flex tn-flex-col-center">
-          <view class="tn-flex-1">费用</view>
-          <view class="tn-margin-left-sm" style="font-size: 28rpx"
-            >{{ theData.price }} 元</view
-          >
+          <view class="tn-flex-1">供应商</view>
+          <view class="tn-margin-left-sm" style="font-size: 28rpx">{{
+            theData.supplier
+          }}</view>
         </view>
       </tn-list-cell>
       <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
         <view class="tn-flex tn-flex-col-center">
           <view class="tn-flex-1">地址</view>
           <view class="tn-margin-left-sm" style="font-size: 28rpx">{{
-            theData.location
+            theData.productionArea
+          }}</view>
+        </view>
+      </tn-list-cell>
+      <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
+        <view class="tn-flex tn-flex-col-center">
+          <view class="tn-flex-1">生产日期</view>
+          <view class="tn-margin-left-sm" style="font-size: 28rpx">{{
+            theData.productionDate
+          }}</view>
+        </view>
+      </tn-list-cell>
+      <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
+        <view class="tn-flex tn-flex-col-center">
+          <view class="tn-flex-1">过期日期</view>
+          <view class="tn-margin-left-sm" style="font-size: 28rpx">{{
+            theData.expirationDate
           }}</view>
         </view>
       </tn-list-cell>
     </view>
 
     <!-- 边距间隔 -->
-    <view class="tn-strip-bottom"></view>
-
-    <view class="tn-margin">
-      <view class="tn-flex tn-flex-row-between">
-        <view class="justify-content-item tn-text-bold tn-text-xl">
-          产品特色
-        </view>
-      </view>
-    </view>
-
-    <view class="">
-      <view class="tn-tag-content tn-margin tn-text-justify">
-        <view
-          v-for="(item, index) in tagList"
-          :key="index"
-          class="tn-tag-content__item tn-margin-right tn-round tn-text-sm tn-text-bold"
-          :class="[`tn-bg-${item.color}--light tn-color-${item.color}`]"
-        >
-          <text class="tn-tag-content__item--prefix">#</text> {{ item.title }}
-        </view>
-      </view>
-    </view>
-
-    <!-- 边距间隔 -->
-    <view class="tn-strip-bottom"></view>
-
-    <!-- 边距间隔 -->
-    <view class="tn-strip-bottom"></view>
-
-    <view class="tn-margin-top-sm">
-      <tn-sticky :offsetTop="10" :customNavHeight="vuex_custom_bar_height">
-        <tn-tabs
-          :list="fixedList"
-          :current="current"
-          :isScroll="false"
-          activeColor="#000"
-          bold="true"
-          :fontSize="32"
-          :badgeOffset="[20, 50]"
-          @change="tabChange"
-        ></tn-tabs>
-      </tn-sticky>
-    </view>
-
-    <!-- 推荐 -->
-    <view class="" v-if="current == 0">
-      <!-- 商品1 start-->
-      <view class="king-item tn-icon-circle-fill">
-        <view class="resume2" style="padding: 20rpx">
-          <text class="">
-            {{ theData.feature }}
-          </text>
-        </view>
-      </view>
-      <!-- 商品1 end-->
-    </view>
-
-    <!-- 同款 -->
-    <view class="" v-if="current == 1">
-      <view class="king-item tn-icon-circle-fill">
-        <view class="resume2" style="padding: 20rpx">
-          <text class="">
-            {{ theData.detail }}
-          </text>
-        </view>
-      </view>
-    </view>
-    <view class="" v-if="current == 2">
-      <view class="king-item tn-icon-circle-fill">
-        <view class="resume2" style="padding: 20rpx">
-          <text class="">
-            {{ theData.strategy }}
-          </text>
-        </view>
-      </view>
-    </view>
-
     <view
       class="footerfixed dd-glass tn-padding-left-sm tn-padding-right tn-padding-top-xs tn-padding-bottom-sm"
     >
@@ -153,7 +90,7 @@
 </template>
 
 <script>
-import { detail } from "@/api/ticket.js";
+import { detail } from "@/api/product.js";
 import { creat } from "@/api/order.js";
 import template_page_mixin from "@/libs/mixin/template_page_mixin.js";
 
@@ -286,7 +223,7 @@ export default {
         orderDate: date,
         totalPrice: this.theData.price,
         status: "success",
-        orderType: "TICKET",
+        orderType: "AGRICULTURAL_PRODUCTS",
       };
       creat(data)
         .then((res) => {
@@ -296,6 +233,9 @@ export default {
             duration: 2000,
             icon: "none",
           });
+          setTimeout(() => {
+            uni.navigateBack();
+          }, 1000);
         })
         .catch((err) => {
           console.log(err);

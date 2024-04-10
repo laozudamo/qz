@@ -174,6 +174,31 @@
 import { detailLine } from "@/api/line.js";
 import { creat } from "@/api/order.js";
 import template_page_mixin from "@/libs/mixin/template_page_mixin.js";
+
+function getFormattedDate() {
+  var currentDate = new Date();
+  var year = currentDate.getFullYear();
+  var month = String(currentDate.getMonth() + 1).padStart(2, "0");
+  var day = String(currentDate.getDate()).padStart(2, "0");
+  var hours = String(currentDate.getHours()).padStart(2, "0");
+  var minutes = String(currentDate.getMinutes()).padStart(2, "0");
+  var seconds = String(currentDate.getSeconds()).padStart(2, "0");
+
+  var formattedDate =
+    year +
+    "-" +
+    month +
+    "-" +
+    day +
+    " " +
+    hours +
+    ":" +
+    minutes +
+    ":" +
+    seconds;
+  return formattedDate;
+}
+
 export default {
   name: "TemplateProduct",
   mixins: [template_page_mixin],
@@ -247,11 +272,12 @@ export default {
   methods: {
     onButtonClick() {
       let userInfo = uni.getStorageSync("userInfo");
+      let date = getFormattedDate();
       let data = {
         customerId: userInfo.id,
         productId: this.theData.id,
         quantity: 1,
-        orderDate: Date.now(),
+        orderDate: date,
         totalPrice: this.theData.cost,
         status: "success",
         orderType: "TRAVEL_ROUTE",
@@ -264,6 +290,10 @@ export default {
             duration: 2000,
             icon: "none",
           });
+
+          setTimeout(() => {
+            uni.navigateBack();
+          }, 1000);
         })
         .catch((err) => {
           console.log(err);

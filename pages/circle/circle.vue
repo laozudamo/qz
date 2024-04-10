@@ -19,7 +19,6 @@
           <image
             :src="item.url"
             mode="aspectFill"
-            v-if="item.type == 'image'"
           ></image>
         </view>
         <view class="swiper-item-text">
@@ -242,37 +241,13 @@
 </template>
 
 <script>
+import { villageSwiper } from "@/api/swipper.js";
 export default {
   name: "CirclePage",
   data() {
     return {
       cardCur: 0,
-      swiperList: [
-        {
-          id: 0,
-          type: "image",
-          title: "",
-          name: "",
-          text: "",
-          url: "/static/banner/b1.jpeg",
-        },
-        {
-          id: 1,
-          type: "image",
-          title: "",
-          name: "",
-          text: "",
-          url: "/static/banner/b1.jpeg",
-        },
-        {
-          id: 2,
-          type: "image",
-          title: "海量分享",
-          name: "总有你想不到的创意",
-          text: "",
-          url: "/static/banner/b2.jpeg",
-        },
-      ],
+      swiperList: [],
       current: 0,
       scrollList: [
         { name: "村庄" },
@@ -331,454 +306,7 @@ export default {
       ],
       // 内容默认隐藏显示的高度
       contentHideShowHeight: 0,
-      content: [
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          label: [" 开心", "创意", "UI框架"],
-          desc: " 开心，助你开发酷炫UI一臂之力",
-          content:
-            "基础常用的布局元素，酷炫完善的配色体系，统一可增的图标 icon ，简便调用的功能组件，酷炫的前端页面，吖，编不下去了",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 62,
-          },
-          collectionCount: 439,
-          commentCount: 46,
-          likeCount: 83,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          label: [" 开心", "创意", "UI框架"],
-          desc: " 开心，助你开发酷炫UI一臂之力",
-          content:
-            "基础常用的布局元素，酷炫完善的配色体系，统一可增的图标 icon ，简便调用的功能组件，酷炫的前端页面，吖，编不下去了",
-          mainImage: [
-            "https://resource.tuniaokj.com/images/blogger/content_1.jpeg",
-          ],
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 12,
-          },
-          collectionCount: 902,
-          commentCount: 64,
-          likeCount: 83,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          label: [],
-          desc: "",
-          content: "",
-          mainImage: [
-            "https://resource.tuniaokj.com/images/shop/computer2.jpg",
-            "https://resource.tuniaokj.com/images/shop/prototype2.jpg",
-          ],
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-            ],
-            viewUserCount: 56,
-          },
-          collectionCount: 431,
-          commentCount: 26,
-          likeCount: 84,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          label: [" 开心", "创意"],
-          desc: " 开心",
-          content:
-            "基础常用的布局元素，酷炫完善的配色体系，统一可增的图标 icon ，简便调用的功能组件，酷炫的前端页面，吖，编不下去了 基础常用的布局元素，酷炫完善的配色体系，统一可增的图标 icon ，简便调用的功能组件，酷炫的前端页面，吖，编不下去了",
-          mainImage: [
-            "https://resource.tuniaokj.com/images/swiper/swiper2.jpg",
-            "https://resource.tuniaokj.com/images/swiper/swiper3.jpg",
-            "https://resource.tuniaokj.com/images/swiper/swiper4.jpg",
-          ],
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-            ],
-            viewUserCount: 231,
-          },
-          collectionCount: 780,
-          commentCount: 89,
-          likeCount: 82,
-        },
-        {
-          userAvatar: "/static/avator.jpg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          label: [" 开心", "链接"],
-          desc: "！！！",
-          mainImage: [
-            "https://resource.tuniaokj.com/images/shop/watch1.jpg",
-            "https://resource.tuniaokj.com/images/shop/watch2.jpg",
-            "https://resource.tuniaokj.com/images/shop/pillow2.jpg",
-            "https://resource.tuniaokj.com/images/shop/pillow.jpg",
-          ],
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-            ],
-            viewUserCount: 28,
-          },
-          collectionCount: 432,
-          commentCount: 33,
-          likeCount: 12,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/content_1.jpeg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          label: [" 开心", "创意"],
-          desc: " 开心",
-          mainImage: [
-            "https://resource.tuniaokj.com/images/blogger/y11.jpg",
-            "https://resource.tuniaokj.com/images/blogger/y33.jpg",
-            "https://resource.tuniaokj.com/images/blogger/y22.jpg",
-            "https://resource.tuniaokj.com/images/blogger/y44.jpg",
-            "https://resource.tuniaokj.com/images/blogger/y55.jpg",
-          ],
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-            ],
-            viewUserCount: 65,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-      ],
-      reserve: [
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          color: "red",
-          label: ["新年祝福"],
-          title: "2023年祝福接力",
-          desc: "祝福接力活动：预约接龙的用户，将收到祝福通知",
-          mainImage: "https://resource.tuniaokj.com/images/shop/prototype2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 567,
-          },
-          collectionCount: 543,
-          commentCount: 543,
-          likeCount: 206,
-        },
-        {
-          userAvatar: "/static/avator.jpg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          color: "cyan",
-          label: ["时光信件"],
-          title: "寄给十年后自己",
-          desc: "时光邮局：预约接龙的用户，十年后，将收到一份来着十年前发出的信件",
-          mainImage: "https://resource.tuniaokj.com/images/shop/prototype1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 987,
-          },
-          collectionCount: 567,
-          commentCount: 69,
-          likeCount: 65,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          color: "blue",
-          label: ["纪念日"],
-          title: "常常忘记纪念日？",
-          desc: "纪念日提醒：预约接龙的用户，微信上将收到纪念日提醒通知",
-          mainImage: "https://resource.tuniaokj.com/images/shop/computer2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 321,
-          },
-          collectionCount: 654,
-          commentCount: 232,
-          likeCount: 543,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          color: "green",
-          label: ["团购接龙"],
-          title: "冰箱空空如也？一起团购屯菜吖",
-          desc: "团购活动：预约接龙的用户，将参与一起来买菜",
-          mainImage: "https://resource.tuniaokj.com/images/shop/phonecase1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 230,
-          },
-          collectionCount: 987,
-          commentCount: 236,
-          likeCount: 342,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/shop/phonecase2.jpg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          color: "orange",
-          label: ["回母校"],
-          title: "常回家看看",
-          desc: "线下活动：预约接龙的用户，将表示参与了活动当天回母校",
-          mainImage: "https://resource.tuniaokj.com/images/shop/phonecase2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 106,
-          },
-          collectionCount: 765,
-          commentCount: 32,
-          likeCount: 91,
-        },
-        {
-          userAvatar: "https://resource.tuniaokj.com/images/shop/watch1.jpg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          color: "purplered",
-          label: ["婚礼"],
-          title: "我们结婚啦",
-          desc: "婚礼请帖：欢迎来参加我们的婚礼宴席，不用随礼",
-          mainImage: "https://resource.tuniaokj.com/images/shop/watch1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 232,
-          },
-          collectionCount: 776,
-          commentCount: 48,
-          likeCount: 86,
-        },
-        {
-          userAvatar: "https://resource.tuniaokj.com/images/shop/sticker.jpg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          color: "purple",
-          label: ["大扫除"],
-          title: "组队参加大扫除公益活动",
-          desc: "活动组队：预约接龙的学生，将表示参与了当天的大扫除活动",
-          mainImage: "https://resource.tuniaokj.com/images/shop/sticker.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 456,
-          },
-          collectionCount: 342,
-          commentCount: 42,
-          likeCount: 76,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: " 北北",
-          date: "2022年5月20日",
-          color: "brown",
-          label: ["新疆出游"],
-          title: "一起组队去新疆看西西",
-          desc: "旅游出行：一起去新疆看西西",
-          mainImage: "https://resource.tuniaokj.com/images/shop/card.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-      ],
+
       adList: [
         { image: "https://resource.tuniaokj.com/images/swiper/ad1.jpg" },
         { image: "https://resource.tuniaokj.com/images/swiper/ad2.jpg" },
@@ -802,6 +330,10 @@ export default {
     //   this.getContentRectInfo()
     // })
   },
+  created() {
+    console.log("2222")
+    this.getData();
+  },
   onShow() {
     this.adAutoplay = true;
   },
@@ -809,6 +341,12 @@ export default {
     this.adAutoplay = false;
   },
   methods: {
+    getData() {
+      villageSwiper().then((res) => {
+        console.log(res);
+        this.swiperList = res;
+      });
+    },
     // cardSwiper
     cardSwiper(e) {
       this.cardCur = e.detail.current;

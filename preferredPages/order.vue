@@ -51,12 +51,17 @@
       >
         <swiper-item class="order__swiper__item">
           <scroll-view :style="{ height: `${swiperHeight}px` }" scroll-y>
-            <view v-for="(item, index) in 6" :key="index" class="order__item">
+            <view
+              v-for="(item, index) in hotelList"
+              :key="index"
+              class="order__item"
+            >
               <view
                 class="order__item__head tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-between"
               >
                 <view class="order__item__head__title">
-                  官方小店<text
+                  {{ item.products.detail
+                  }}<text
                     class="order__item__head__title--right-icon tn-icon-right"
                   ></text
                 ></view>
@@ -67,13 +72,10 @@
                 class="order__item__content tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-center"
               >
                 <view class="order__item__content__image">
-                  <image
-                    src="https://resource.tuniaokj.com/images/shop/prototype2.jpg"
-                    mode="scaleToFill"
-                  ></image>
+                  <image :src="item.products.image" mode="scaleToFill"></image>
                 </view>
                 <view class="order__item__content__title">
-                  官方设计 酷炫效果展示 让用户眼前一亮的赶脚
+                  {{ item.products.feature }}
                 </view>
                 <view
                   class="order__item__content__info tn-flex tn-flex-direction-column tn-flex-col-center tn-flex-row-center"
@@ -84,7 +86,7 @@
                     >
                     <text
                       class="order__item__content__info__price__value--integer"
-                      >1000</text
+                      >{{ item.products.price }}</text
                     >
                     <text
                       class="order__item__content__info__price__value--decimal"
@@ -97,7 +99,7 @@
                 </view>
               </view>
 
-              <view
+              <!-- <view
                 class="order__item__operation tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-between"
               >
                 <view class="order__item__operaation__left">
@@ -143,7 +145,7 @@
                     >
                   </view>
                 </view>
-              </view>
+              </view> -->
             </view>
             <view class="tn-padding-bottom"></view>
           </scroll-view>
@@ -151,12 +153,17 @@
 
         <swiper-item class="order__swiper__item">
           <scroll-view :style="{ height: `${swiperHeight}px` }" scroll-y>
-            <view v-for="(item, index) in 6" :key="index" class="order__item">
+            <view
+              v-for="(item, index) in ticketList"
+              :key="index"
+              class="order__item"
+            >
               <view
                 class="order__item__head tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-between"
               >
                 <view class="order__item__head__title">
-                  官方小店<text
+                  {{ item.products.name
+                  }}<text
                     class="order__item__head__title--right-icon tn-icon-right"
                   ></text
                 ></view>
@@ -164,23 +171,13 @@
               </view>
 
               <view
-                class="order__item__content tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-between"
+                class="order__item__content tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-center"
               >
-                <view
-                  class="tn-flex tn-flex-nowrap tn-flex-direction-row tn-flex-col-center tn-flex-row-left"
-                >
-                  <view class="order__item__content__image">
-                    <image
-                      src="https://resource.tuniaokj.com/images/shop/computer2.jpg"
-                      mode="scaleToFill"
-                    ></image>
-                  </view>
-                  <view class="order__item__content__image">
-                    <image
-                      src="https://resource.tuniaokj.com/images/shop/bag2.jpg"
-                      mode="scaleToFill"
-                    ></image>
-                  </view>
+                <view class="order__item__content__image">
+                  <image :src="item.products.image" mode="scaleToFill"></image>
+                </view>
+                <view class="order__item__content__title">
+                  {{ item.products.feature }}
                 </view>
                 <view
                   class="order__item__content__info tn-flex tn-flex-direction-column tn-flex-col-center tn-flex-row-center"
@@ -191,7 +188,7 @@
                     >
                     <text
                       class="order__item__content__info__price__value--integer"
-                      >2000</text
+                      >{{ item.products.price }}</text
                     >
                     <text
                       class="order__item__content__info__price__value--decimal"
@@ -199,55 +196,7 @@
                     >
                   </view>
                   <view class="order__item__content__info__count">
-                    <text>共2件</text>
-                  </view>
-                </view>
-              </view>
-
-              <view
-                class="order__item__operation tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-between"
-              >
-                <view class="order__item__operaation__left">
-                  <text class="order__item__operaation__left--text">更多</text>
-                </view>
-                <view
-                  class="order__item__operation__right tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-right"
-                >
-                  <view class="order__item__operaation__right__button">
-                    <tn-button
-                      shadow
-                      shape="round"
-                      fontColor="#080808"
-                      backgroundColor="#E6E6E6"
-                      :fontSize="24"
-                      height="auto"
-                      padding="10rpx 18rpx"
-                      >查看发票</tn-button
-                    >
-                  </view>
-                  <view class="order__item__operation__right__button">
-                    <tn-button
-                      shadow
-                      shape="round"
-                      fontColor="#FFFFFF"
-                      backgroundColor="#080808"
-                      :fontSize="24"
-                      height="auto"
-                      padding="10rpx 18rpx"
-                      >退换/售后</tn-button
-                    >
-                  </view>
-                  <view class="order__item__operation__right__button">
-                    <tn-button
-                      shadow
-                      shape="round"
-                      fontColor="tn-color-white"
-                      backgroundColor="tn-cool-bg-color-1"
-                      :fontSize="24"
-                      height="auto"
-                      padding="10rpx 18rpx"
-                      >再次购买</tn-button
-                    >
+                    <text>共1件</text>
                   </view>
                 </view>
               </view>
@@ -258,12 +207,17 @@
 
         <swiper-item class="order__swiper__item">
           <scroll-view :style="{ height: `${swiperHeight}px` }" scroll-y>
-            <view v-for="(item, index) in 6" :key="index" class="order__item">
+            <view
+              v-for="(item, index) in lineList"
+              :key="index"
+              class="order__item"
+            >
               <view
                 class="order__item__head tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-between"
               >
                 <view class="order__item__head__title">
-                  官方小店<text
+                  {{ item.products.itineraryFeature
+                  }}<text
                     class="order__item__head__title--right-icon tn-icon-right"
                   ></text
                 ></view>
@@ -271,29 +225,13 @@
               </view>
 
               <view
-                class="order__item__content tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-between"
+                class="order__item__content tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-center"
               >
-                <view
-                  class="tn-flex tn-flex-nowrap tn-flex-direction-row tn-flex-col-center tn-flex-row-left"
-                >
-                  <view class="order__item__content__image">
-                    <image
-                      src="https://resource.tuniaokj.com/images/shop/card.jpg"
-                      mode="scaleToFill"
-                    ></image>
-                  </view>
-                  <view class="order__item__content__image">
-                    <image
-                      src="https://resource.tuniaokj.com/images/shop/cup1.jpg"
-                      mode="scaleToFill"
-                    ></image>
-                  </view>
-                  <view class="order__item__content__image">
-                    <image
-                      src="https://resource.tuniaokj.com/images/shop/computer2.jpg"
-                      mode="scaleToFill"
-                    ></image>
-                  </view>
+                <view class="order__item__content__image">
+                  <image :src="item.products.image" mode="scaleToFill"></image>
+                </view>
+                <view class="order__item__content__title">
+                  {{ item.products.itineraryIntroduction }}
                 </view>
                 <view
                   class="order__item__content__info tn-flex tn-flex-direction-column tn-flex-col-center tn-flex-row-center"
@@ -304,7 +242,7 @@
                     >
                     <text
                       class="order__item__content__info__price__value--integer"
-                      >3000</text
+                      >{{ item.products.cost }}</text
                     >
                     <text
                       class="order__item__content__info__price__value--decimal"
@@ -312,55 +250,65 @@
                     >
                   </view>
                   <view class="order__item__content__info__count">
-                    <text>共3件</text>
+                    <text>共1件</text>
                   </view>
                 </view>
               </view>
+            </view>
+            <view class="tn-padding-bottom"></view>
+          </scroll-view>
+        </swiper-item>
+
+        <swiper-item class="order__swiper__item">
+          <scroll-view :style="{ height: `${swiperHeight}px` }" scroll-y>
+            <view
+              v-for="(item, index) in productList"
+              :key="index"
+              class="order__item"
+            >
+              <view
+                class="order__item__head tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-between"
+              >
+                <view class="order__item__head__title">
+                  {{ item.products.supplier
+                  }}<text
+                    class="order__item__head__title--right-icon tn-icon-right"
+                  ></text
+                ></view>
+                <view class="order__item__head__status">完成</view>
+              </view>
 
               <view
-                class="order__item__operation tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-between"
+                class="order__item__content tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-center"
               >
-                <view class="order__item__operaation__left">
-                  <text class="order__item__operaation__left--text">更多</text>
+                <view class="order__item__content__image">
+                  <image
+                    :src="item.products.imageUrl"
+                    mode="scaleToFill"
+                  ></image>
+                </view>
+                <view class="order__item__content__title">
+                  {{ item.products.productionArea }}
+                  {{ item.products.name }}
                 </view>
                 <view
-                  class="order__item__operation__right tn-flex tn-flex-direction-row tn-flex-nowrap tn-flex-col-center tn-flex-row-right"
+                  class="order__item__content__info tn-flex tn-flex-direction-column tn-flex-col-center tn-flex-row-center"
                 >
-                  <view class="order__item__operaation__right__button">
-                    <tn-button
-                      shadow
-                      shape="round"
-                      fontColor="#080808"
-                      backgroundColor="#E6E6E6"
-                      :fontSize="24"
-                      height="auto"
-                      padding="10rpx 18rpx"
-                      >查看发票</tn-button
+                  <view class="order__item__content__info__price">
+                    <text class="order__item__content__info__price--unit"
+                      >￥</text
+                    >
+                    <text
+                      class="order__item__content__info__price__value--integer"
+                      >{{ item.products.price }}</text
+                    >
+                    <text
+                      class="order__item__content__info__price__value--decimal"
+                      >.00</text
                     >
                   </view>
-                  <view class="order__item__operation__right__button">
-                    <tn-button
-                      shadow
-                      shape="round"
-                      fontColor="#FFFFFF"
-                      backgroundColor="#080808"
-                      :fontSize="24"
-                      height="auto"
-                      padding="10rpx 18rpx"
-                      >退换/售后</tn-button
-                    >
-                  </view>
-                  <view class="order__item__operation__right__button">
-                    <tn-button
-                      shadow
-                      shape="round"
-                      fontColor="tn-color-white"
-                      backgroundColor="tn-cool-bg-color-1"
-                      :fontSize="24"
-                      height="auto"
-                      padding="10rpx 18rpx"
-                      >再次购买</tn-button
-                    >
+                  <view class="order__item__content__info__count">
+                    <text>共1件</text>
                   </view>
                 </view>
               </view>
@@ -375,19 +323,30 @@
 
 <script>
 import templatePageMixin from "@/libs/mixin/template_page_mixin.js";
-import { getList } from "@/api/order";
+import { getList, del } from "@/api/order";
 
 export default {
   name: "TemplateOrder",
   mixins: [templatePageMixin],
   data() {
     return {
-      list: [{ name: "民宿" }, { name: "门票" }, { name: "商品" }],
+      list: [
+        { name: "民宿" },
+        { name: "门票" },
+        { name: "旅游" },
+        { name: "商品" },
+      ],
       tabsIndex: 0,
       swiperIndex: 0,
       swiperTop: 0,
       swiperHeight: 0,
-      dataList: [],
+      // dataList: [],
+      // allData: [],
+      hotelList: [],
+      ticketList: [],
+      lineList: [],
+      productList: [],
+
       params: {
         pageIndex: 1,
         pageSize: 1000,
@@ -407,8 +366,20 @@ export default {
     getData() {
       getList(this.params).then((res) => {
         console.log(res);
-        // const { list } = res;
-        // this.list = list;
+        const { list } = res;
+
+        this.hotelList = list.filter((item) => item.type === "HOTEL");
+        this.ticketList = list.filter((item) => item.type === "TICKET");
+        this.lineList = list.filter((item) => item.type === "TRAVEL_ROUTE");
+        this.productList = list.filter(
+          (item) => item.type === "AGRICULTURAL_PRODUCTS"
+        );
+
+        // let id = "-1548816379";
+        // del(id).then((res) => {
+        //   console.log(res);
+        // });
+        // console.log("Product", this.productList);
       });
     },
     // 计算可滑动区域的高度信息

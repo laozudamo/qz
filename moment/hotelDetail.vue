@@ -216,6 +216,20 @@
 import { detail } from "@/api/hotel.js";
 import { creat } from "@/api/order.js";
 
+function getFormattedDate() {
+  var currentDate = new Date();
+  var year = currentDate.getFullYear();
+  var month = String(currentDate.getMonth() + 1).padStart(2, "0");
+  var day = String(currentDate.getDate()).padStart(2, "0");
+  var hours = String(currentDate.getHours()).padStart(2, "0");
+  var minutes = String(currentDate.getMinutes()).padStart(2, "0");
+  var seconds = String(currentDate.getSeconds()).padStart(2, "0");
+
+  var formattedDate = year + onButtonClick;
+  "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
+  return formattedDate;
+}
+
 import template_page_mixin from "@/libs/mixin/template_page_mixin.js";
 export default {
   name: "TemplateProduct",
@@ -328,14 +342,17 @@ export default {
   methods: {
     onButtonClick() {
       let userInfo = uni.getStorageSync("userInfo");
+
+      let date = getFormattedDate();
+
       let data = {
         customerId: userInfo.id,
         productId: this.theData.id,
         quantity: 1,
-        orderDate: "2024-3-12 23:21:00",
+        orderDate: date,
         totalPrice: this.theData.price,
         status: "success",
-        orderType: "AGRICULTURAL_PRODUCTS",
+        orderType: "HOTEL",
       };
       creat(data)
         .then((res) => {
@@ -345,6 +362,9 @@ export default {
             duration: 2000,
             icon: "none",
           });
+          setTimeout(() => {
+            uni.navigateBack();
+          }, 1000);
         })
         .catch((err) => {
           console.log(err);

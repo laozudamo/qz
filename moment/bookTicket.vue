@@ -28,8 +28,8 @@
         <view class="" style="width: 50%" @click="tn(item)">
           <view class="tn-blogger-content__wrap">
             <view class="image-picbook">
-              <view class="image-book"> </view>
-              <image :src="item.image" mode="" />
+              <!-- <view class="image-book"> </view> -->
+              <img width="160" hight="200" :src="item.image" mode="" />
             </view>
 
             <view

@@ -50,11 +50,7 @@
         :class="cardCur == index ? 'cur' : ''"
       >
         <view class="swiper-item image-banner">
-          <image
-            :src="item.url"
-            mode="aspectFill"
-            v-if="item.type == 'image'"
-          ></image>
+          <image :src="item.url" mode="aspectFill"></image>
         </view>
         <view class="swiper-item-text">
           <view class="tn-text-bold tn-color-white" style="font-size: 90rpx">{{
@@ -132,7 +128,6 @@
           </view>
         </view>
       </view>
-  
     </view>
 
     <view class="tn-flex tn-margin-xs">
@@ -170,7 +165,7 @@
           </view>
         </view>
       </view>
-      
+
       <view
         class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius"
         @click="tn('/moment/cz')"
@@ -265,7 +260,7 @@
                 </view>
               </view>
             </view>
-        
+
             <view class="tn-flex-1 tn-padding-sm tn-margin-left">
               <view
                 class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
@@ -293,7 +288,6 @@
           热门线路
         </view>
       </view>
-
     </view>
 
     <!-- 商家商品 start-->
@@ -387,6 +381,7 @@
 
 <script>
 import { getList } from "@/api/index.js";
+import { homeSwiper } from "@/api/swipper.js";
 import { getLine } from "@/api/line.js";
 export default {
   name: "Index",
@@ -394,32 +389,7 @@ export default {
     return {
       cardCur: 0,
       isAndroid: true,
-      swiperList: [
-        {
-          id: 0,
-          type: "image",
-          title: "",
-          name: "",
-          text: "",
-          url: "/static/banner/b1.jpeg",
-        },
-        {
-          id: 1,
-          type: "image",
-          title: "",
-          name: "",
-          text: "",
-          url: "/static/banner/b1.jpeg",
-        },
-        {
-          id: 2,
-          type: "image",
-          title: "海量分享",
-          name: "总有你想不到的创意",
-          text: "",
-          url: "/static/banner/b2.jpeg",
-        },
-      ],
+      swiperList: [],
       cardCur2: 0,
       resumeList: [],
       content: [],
@@ -453,6 +423,11 @@ export default {
         console.log(res);
         const { list } = res;
         this.resumeList = list;
+      });
+
+      homeSwiper().then((res) => {
+        console.log(res);
+        this.swiperList = res;
       });
 
       getLine(params).then((res) => {

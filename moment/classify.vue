@@ -117,6 +117,7 @@
 </template>
 
 <script>
+import { getlist } from "@/api/product.js";
 export default {
   name: "templateShopClassify",
   data() {
@@ -198,92 +199,7 @@ export default {
                 title: "运动手表",
               },
             ],
-          },
-          // {
-          //   title: "专场推荐",
-          //   classify: [
-          //     {
-          //       image:
-          //         "https://resource.tuniaokj.com/images/shop/phonecase1.jpg",
-          //       title: "5G手机",
-          //     },
-          //     {
-          //       image:
-          //         "https://resource.tuniaokj.com/images/shop/phonecase2.jpg",
-          //       title: "游戏手机",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/watch1.jpg",
-          //       title: "智能手表",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/watch2.jpg",
-          //       title: "运动手表",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/card.jpg",
-          //       title: " 服务",
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: "专场推荐",
-          //   classify: [
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/bag1.jpg",
-          //       title: "环保袋",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/bag2.jpg",
-          //       title: "手提袋",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/cup1.jpg",
-          //       title: "奶茶杯",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/cup2.jpg",
-          //       title: "纸杯",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/pillow.jpg",
-          //       title: "抱枕",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/sticker.jpg",
-          //       title: "贴纸",
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: "专场推荐",
-          //   classify: [
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/bag1.jpg",
-          //       title: "环保袋",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/bag2.jpg",
-          //       title: "手提袋",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/cup1.jpg",
-          //       title: "奶茶杯",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/cup2.jpg",
-          //       title: "纸杯",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/pillow.jpg",
-          //       title: "抱枕",
-          //     },
-          //     {
-          //       image: "https://resource.tuniaokj.com/images/shop/pillow2.jpg",
-          //       title: "蓝色抱枕",
-          //     },
-          //   ],
-          // },
+          },  
         ],
       },
       // 分类菜单item的信息

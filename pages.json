@@ -346,7 +346,14 @@
         {
           "path": "ticketDetail",
           "style": {
-            "navigationBarTitleText": "详情",
+            "navigationBarTitleText": "",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "productDetail",
+          "style": {
+            "navigationBarTitleText": "",
             "enablePullDownRefresh": false
           }
         }

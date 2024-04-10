@@ -150,6 +150,23 @@
               </view>
             </view>
           </view>
+          <view
+            class="tn-padding-sm tn-margin-xs tn-radius"
+            @click="tn('/preferredPages/order')"
+          >
+            <view
+              class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
+            >
+              <view
+                class="icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-bg-orange"
+              >
+                <view class="tn-icon-order" style="color: #080808"></view>
+              </view>
+              <view class="tn-text-center">
+                <text class="tn-text-ellipsis">历史订单</text>
+              </view>
+            </view>
+          </view>
           <!-- <view
             class="tn-padding-sm tn-margin-xs tn-radius"
             @click="tn('/minePages/integral')"
