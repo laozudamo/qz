@@ -301,19 +301,22 @@ export default {
         password: "e10adc3949ba59abbe56e057f20f883e",
       };
 
-      userLogin(data).then((res) => {
+      userLogin(data).then(async (res) => {
         const { token } = res;
         uni.setStorageSync("token", token);
 
-        userInfo().then((res) => {
-          uni.setStorageSync("userInfo", res);
-
-          setTimeout(() => {
-            uni.redirectTo({
-              url: "/pages/index",
-            });
-          }, 1000);
-        });
+        userInfo()
+          .then((res) => {
+            uni.setStorageSync("userInfo", res);
+            setTimeout(() => {
+              uni.redirectTo({
+                url: "/pages/index",
+              });
+            }, 1000);
+          })
+          .catch((err) => {
+            this.hanleLogin();
+          });
       });
     },
     // 切换模式

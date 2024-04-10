@@ -185,10 +185,7 @@
       </view>
     </view>
 
-    <view
-      class="tn-flex tn-flex-row-between tn-margin-top"
-      @click="tn('/circlePages/business')"
-    >
+    <view class="tn-flex tn-flex-row-between tn-margin-top">
       <view class="justify-content-item tn-margin tn-text-bold tn-text-xxl">
         热门村庄
       </view>
@@ -210,7 +207,7 @@
         v-for="(item, index) in resumeList"
         :key="index"
         :class="cardCur2 == index ? 'cur' : ''"
-        @click="tn('/circlePages/king')"
+        @click="go(item)"
       >
         <!-- <view class="swiper-item image-banner">
           <image :src="item.url" mode="aspectFill" v-if="item.type=='image'"></image>
@@ -436,6 +433,7 @@ export default {
         // this.resumeList = list;
       });
     },
+
     // cardSwiper
     cardSwiper(e) {
       this.cardCur = e.detail.current;
@@ -447,6 +445,12 @@ export default {
     tn(e) {
       uni.navigateTo({
         url: e,
+      });
+    },
+
+    go(item) {
+      uni.navigateTo({
+        url: "/moment/czDetail?id=" + item.id,
       });
     },
     // 跳转

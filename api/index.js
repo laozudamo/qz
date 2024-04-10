@@ -6,5 +6,7 @@ export const userLogin = (data) => http.post('/admin/login', data)
 // 村庄
 export const getList = (params) => http.get('/admin/village/getVillagePage', { params })
 
+export const detail = (id) => http.get('/admin/village/getVillage/' + id)
+
 
 
