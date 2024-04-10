@@ -31,15 +31,14 @@
             @click="tn('/minePages/set')"
           >
             <view class="logo-pic tn-shadow">
-           
-                <tn-avatar shape="circle" :src="userInfo.head"></tn-avatar>
+              <tn-avatar shape="circle" :src="userInfo.head"></tn-avatar>
             </view>
             <view class="tn-padding-right">
               <view
                 class="tn-padding-right tn-padding-left-sm tn-text-xl tn-text-bold"
               >
                 <text class="tn-color-brown--dark">{{
-                  userInfo.username
+                  userInfo.nickname
                 }}</text>
               </view>
               <view
@@ -151,7 +150,7 @@
               </view>
             </view>
           </view>
-          <view
+          <!-- <view
             class="tn-padding-sm tn-margin-xs tn-radius"
             @click="tn('/minePages/integral')"
           >
@@ -184,7 +183,7 @@
                 <text class="tn-text-ellipsis">积分签到</text>
               </view>
             </view>
-          </view>
+          </view> -->
         </view>
         <view class="tn-flex tn-flex-row-center tn-radius tn-padding-top">
           <view
@@ -238,7 +237,7 @@
               </view>
             </view>
           </view>
-          <view
+          <!-- <view
             class="tn-padding-sm tn-margin-xs tn-radius"
             @click="tn('/minePages/set')"
           >
@@ -254,7 +253,7 @@
                 <text class="tn-text-ellipsis">全局设置</text>
               </view>
             </view>
-          </view>
+          </view> -->
 
           <!-- <view class="tn-padding-sm tn-margin-xs tn-radius" @click="tn('/minePages/cart/cart')">
             <view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">

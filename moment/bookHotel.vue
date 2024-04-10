@@ -7,11 +7,16 @@
 
     <view
       :style="{ paddingTop: vuex_custom_bar_height + 'px', margin: '20rpx' }"
+      @click="show = true"
+      class="the-pos"
     >
+      {{ address ? address : "选择位置" }}
+    </view>
+    <view>
       <tn-input
         v-model="params.keyword"
         :autoHeight="true"
-        placeholder="输入地址搜索"
+        placeholder="关键字搜索"
         :border="true"
         @confirm="confirm"
       />
@@ -100,6 +105,10 @@
         </view>
       </block>
     </view>
+
+    <tn-popup v-model="show" height="700rpx" closeBtn="true" mode="bottom">
+      <qsAdddress @onSelectConfirm="onSelectConfirm" />
+    </tn-popup>
     <!-- 商品 end-->
 
     <view class="tn-tabbar-height"></view>
@@ -107,13 +116,14 @@
 </template>
 
 <script>
-import pickAdress from "@/components/john-pickAddress/pickAddress.vue";
+import qsAdddress from "@/components/john-pickAddress/pickAddress.vue";
 
 import { getList, detail } from "@/api/hotel.js";
+
 export default {
   name: "Index",
   components: {
-    pickAdress,
+    qsAdddress,
   },
   data() {
     return {
@@ -391,12 +401,13 @@ export default {
         this.content = list;
       });
     },
+
+    onSelectConfirm(v) {
+      this.show = false;
+      this.address = v;
+    },
     confirm() {
       this.getData();
-    },
-    openAddress() {
-      this.show = true;
-      // this.$refs.pickAdress.onOpen();
     },
     // cardSwiper
     cardSwiper(e) {
@@ -1064,5 +1075,13 @@ export default {
 }
 .tn-blogger-content__wrap {
   padding: 10rpx;
+}
+
+/deep/.picker-box .picker-close {
+  border-bottom: none;
+}
+
+.the-pos {
+  text-align: center;
 }
 </style>

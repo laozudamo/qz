@@ -244,15 +244,17 @@ export default {
   onLoad() {},
   methods: {
     submit() {
+      let userInfo = uni.getStorageSync("userInfo");
+
       let data = {
         content: this.content,
         villageId: 0,
-        avatar: "",
-        name: "jack",
+        avatar: userInfo.head,
+        name: userInfo.nickname,
         tag: "hi, lucy, wang",
         // image: "string",
-        dislikeCount: 0,
-        likeCount: 0,
+        dislikeCount: 1,
+        likeCount: 1,
         commentCount: 0,
         shareCount: 0,
       };

@@ -175,6 +175,7 @@
 
 <script>
 import { detailLine } from "@/api/line.js";
+import { creat } from "@/api/order.js";
 import template_page_mixin from "@/libs/mixin/template_page_mixin.js";
 export default {
   name: "TemplateProduct",
@@ -228,11 +229,11 @@ export default {
         },
       ],
       customButtonGroups: [
-        {
-          text: "咨询客服",
-          backgroundColor: "tn-cool-bg-color-5",
-          color: "#FFFFFF",
-        },
+        // {
+        //   text: "咨询客服",
+        //   backgroundColor: "tn-cool-bg-color-5",
+        //   color: "#FFFFFF",
+        // },
         {
           text: "立即购买",
           backgroundColor: "tn-cool-bg-color-15--reverse",
@@ -272,6 +273,30 @@ export default {
     }
   },
   methods: {
+    onButtonClick() {
+      let userInfo = uni.getStorageSync("userInfo");
+      let data = {
+        customerId: userInfo.id,
+        productId: this.theData.id,
+        quantity: 1,
+        orderDate: Date.now(),
+        totalPrice: this.theData.price,
+        status: "success",
+        orderType: "TICKET",
+      };
+      creat(data)
+        .then((res) => {
+          console.log(res);
+          uni.showToast({
+            title: "购买成功",
+            duration: 2000,
+            icon: "none",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
     // cardSwiper
     cardSwiper(e) {
       this.cardCur = e.detail.current;

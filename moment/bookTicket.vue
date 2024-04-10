@@ -10,109 +10,14 @@
         <view class="justify-content-item tn-margin tn-text-bold tn-text-xxl">
         </view>
       </view>
+    </view>
 
-      <!-- <view
-        class="tn-flex tn-flex-row-between"
-        @click="tn('/activityPages/project')"
-      >
-        <view class="justify-content-item tn-margin tn-text-bold tn-text-xxl">
-          热门旅游线路
-        </view>
-        <view class="justify-content-item tn-margin tn-text-lg tn-color-grey">
-          <text class="tn-padding-xs">全部</text>
-          <text class="tn-icon-topics"></text>
-        </view>
-      </view> -->
-      <!-- 
-      <view
-        class="tn-flex tn-margin-left tn-margin-right tn-margin-top-sm"
-        @click="tn('/circlePages/news')"
-      >
-        <view class="tn-flex-2">
-          <view
-            class="image-pic tn-margin-right tn-shadow-blur"
-            style="
-              background-image: url('https://resource.tuniaokj.com/images/content/rodion.jpg');
-            "
-          >
-            <view class="image-tuniao1"> </view>
-          </view>
-        </view>
-        <view class="tn-flex-1">
-          <view
-            class="image-pic tn-shadow-blur"
-            style="
-              background-image: url('https://resource.tuniaokj.com/images/shop/phonecase1.jpg');
-            "
-          >
-            <view class="image-tuniao2"> </view>
-          </view>
-          <view
-            class="image-pic tn-margin-top tn-shadow-blur"
-            style="
-              background-image: url('https://resource.tuniaokj.com/images/shop/banner1.jpg');
-            "
-          >
-            <view class="image-tuniao2"> </view>
-          </view>
-        </view>
-      </view> -->
-
-      <!-- <view class="tn-flex tn-flex-row-between tn-margin-top">
-        <view class="justify-content-item tn-margin tn-text-bold tn-text-xxl">
-          业务范围
-        </view>
-        <view class="justify-content-item tn-margin tn-text-lg tn-color-grey">
-          <text class="tn-padding-xs">全部</text>
-          <text class="tn-icon-topics"></text>
-        </view>
-      </view> -->
-
-      <!-- <view
-        class="tn-info__container tn-flex tn-flex-wrap tn-flex-col-center tn-flex-row-between tn-margin-left tn-margin-right"
-      >
-        <block v-for="(item, index) in tuniaoData" :key="index">
-          <view
-            class="tn-info__item tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-between tn-color-white tn-shadow-blur"
-            :style="'background-color:' + item.color + ';'"
-            @click="tn('/homePages/profession')"
-          >
-            <view
-              class="tn-info__item__left tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-left"
-            >
-              <view class="tn-info__item__left__content">
-                <view
-                  class="tn-info__item__left__content--title tn-text-bold"
-                  style="font-size: 38rpx"
-                  >{{ item.title }}</view
-                >
-                <view
-                  class="tn-info__item__left__content--data tn-padding-top-xs"
-                >
-                  {{ item.value }}
-                  <text class="tn-icon-right tn-padding-left-xs"></text>
-                </view>
-              </view>
-            </view>
-            <view class="tn-info__item__right">
-              <view class="tn-info__item__right--icon">
-                <view :class="[`tn-icon-${item.icon}`]"></view>
-              </view>
-            </view>
-            <view class="tn-info__item__bottom">
-              <view
-                class="name tn-text-sm tn-color-gray"
-                style="margin-left: -10rpx"
-              >
-                <text
-                  class="tn-icon-code tn-padding-right-xs"
-                  style="opacity: 0"
-                ></text>
-              </view>
-            </view>
-          </view>
-        </block>
-      </view> -->
+    <view
+      :style="{ paddingTop: vuex_custom_bar_height + 'px', margin: '20rpx' }"
+      @click="show = true"
+      class="the-pos"
+    >
+      {{ address ? address : "选择位置" }}
     </view>
 
     <!-- 商家商品 start-->
@@ -197,6 +102,10 @@
         </view>
       </block>
     </view>
+
+    <tn-popup v-model="show" height="700rpx" :closeBtn="true" mode="bottom">
+      <qsAdddress @onSelectConfirm="onSelectConfirm" />
+    </tn-popup>
     <!-- 商品 end-->
 
     <view class="tn-tabbar-height"></view>
@@ -204,12 +113,19 @@
 </template>
 
 <script>
+import qsAdddress from "@/components/john-pickAddress/pickAddress.vue";
+
 import { getList } from "@/api/ticket.js";
 export default {
   name: "Index",
+  components: {
+    qsAdddress,
+  },
   data() {
     return {
+      address: "",
       cardCur: 0,
+      show: false,
       isAndroid: true,
       swiperList: [
         {
@@ -483,6 +399,10 @@ export default {
         this.content = list;
         // this.resumeList = list;
       });
+    },
+    onSelectConfirm(v) {
+      this.show = false;
+      this.address = v;
     },
     // cardSwiper
     cardSwiper(e) {
@@ -1150,5 +1070,13 @@ export default {
 }
 .tn-blogger-content__wrap {
   padding: 10rpx;
+}
+
+.the-pos {
+  text-align: center;
+}
+
+/deep/.picker-box .picker-close {
+  border-bottom: none;
 }
 </style>

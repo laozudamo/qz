@@ -195,32 +195,6 @@
       <!-- 商品1 end-->
     </view>
 
-    <!-- 热卖 -->
-    <view class="" v-if="current == 2">
-      <view class="king-item tn-icon-circle-fill">
-        <view class="resume2" style="padding: 20rpx">
-          <text class="">
-            温馨提示：由于贵州旅游淡旺季差异较大，以及天气、人数、气候、道路交通状况和不可抗力因素等其他原因，行程游览顺序可能临时出现调整改变，行程披露游览顺序仅供参考。行程游览顺序会根据实际情况临时调整景区游览顺序。具体游览顺序只能以出发前1天客服或上团导游告知的游览顺序为准。除游览顺序可能临时调整，景区游览时间和服务标准均保持不变。客人购买本产品及表示客人知晓并同意旅行社可能临时调整游览顺序，不能因为游览顺序改变而进行后续投诉或临时取消。当然行程也可能按原网页顺序进行安排。所以是否调整游览顺序均不影响游客对景区的游览参观时间和服务标准
-          </text>
-        </view>
-      </view>
-    </view>
-
-    <!-- 爆款 -->
-    <view class="" v-if="current == 3">
-      <view class="king-item tn-icon-circle-fill">
-        <view class="resume2" style="padding: 20rpx">
-          <text class="">
-            1、行程中所列出发与到达时间只能做参考，不能做承诺要约；如遇节假日，堵车以及突发状况，以及季节变化时间会有所调整和改变，具体可以详询客服。
-            其他贵阳当地出发产品推荐：
-            1、贵阳出发：黄果树+西江千户苗寨+荔波小七孔纯玩3日游；点击或收索预定产品编号：18179206
-            2、贵阳出发：贵阳+黄果树2日纯玩游；点击或收索预定产品编号：18542604
-            3、贵阳出发：西江千户苗寨+荔波小七孔2日纯玩游；点击或收索预定产品编号：18542497
-          </text>
-        </view>
-      </view>
-    </view>
-
     <view
       class="footerfixed dd-glass tn-padding-left-sm tn-padding-right tn-padding-top-xs tn-padding-bottom-sm"
     >
@@ -240,6 +214,7 @@
 
 <script>
 import { detail } from "@/api/hotel.js";
+import { creat } from "@/api/order.js";
 
 import template_page_mixin from "@/libs/mixin/template_page_mixin.js";
 export default {
@@ -352,9 +327,28 @@ export default {
   },
   methods: {
     onButtonClick() {
-      if (this.id) {
-        create()
-      }
+      let userInfo = uni.getStorageSync("userInfo");
+      let data = {
+        customerId: userInfo.id,
+        productId: this.theData.id,
+        quantity: 1,
+        orderDate: "2024-3-12 23:21:00",
+        totalPrice: this.theData.price,
+        status: "success",
+        orderType: "AGRICULTURAL_PRODUCTS",
+      };
+      creat(data)
+        .then((res) => {
+          console.log(res);
+          uni.showToast({
+            title: "购买成功",
+            duration: 2000,
+            icon: "none",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
     // cardSwiper
     cardSwiper(e) {
