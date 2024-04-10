@@ -20,35 +20,6 @@
       ></image>
     </view>
 
-    <button @click="navThanks">
-      <view class="dong">
-        <view class="monster">
-          <view class="monster__face">
-            <view class="monster__eye avatar-eye avatar-eye--green eye--left">
-              <view class="avatar-eye-pupil pupil--green"
-                ><span class="avatar-eye-pupil-blackThing"
-                  ><span class="avatar-eye-pupil-lightReflection"></span></span
-              ></view>
-            </view>
-            <view class="monster__eye avatar-eye avatar-eye--violet eye--right">
-              <view class="avatar-eye-pupil pupil--pink"
-                ><span class="avatar-eye-pupil-blackThing"
-                  ><span class="avatar-eye-pupil-lightReflection"></span></span
-              ></view>
-            </view>
-            <view class="monster__noses">
-              <view class="monster__nose"></view>
-              <view class="monster__nose"></view>
-            </view>
-            <view class="monster__mouth">
-              <view class="monster__top"></view>
-              <view class="monster__bottom"></view>
-            </view>
-          </view>
-        </view>
-      </view>
-    </button>
-
     <view class="about__wrap">
       <!-- 图标logo/头像 -->
       <view
@@ -60,24 +31,16 @@
             @click="tn('/minePages/set')"
           >
             <view class="logo-pic tn-shadow">
-              <view class="logo-image">
-                <view
-                  class="tn-shadow-blur"
-                  style="
-                    background-image: url('/static/avator.jpg');
-                    width: 110rpx;
-                    height: 110rpx;
-                    background-size: cover;
-                  "
-                >
-                </view>
-              </view>
+           
+                <tn-avatar shape="circle" :src="userInfo.head"></tn-avatar>
             </view>
             <view class="tn-padding-right">
               <view
                 class="tn-padding-right tn-padding-left-sm tn-text-xl tn-text-bold"
               >
-                <text class="tn-color-brown--dark">抓住那只北北猪</text>
+                <text class="tn-color-brown--dark">{{
+                  userInfo.username
+                }}</text>
               </view>
               <view
                 class="tn-padding-right tn-padding-top-xs tn-padding-left-sm tn-text-ellipsis"
@@ -400,7 +363,16 @@
 export default {
   name: "Mine",
   data() {
-    return {};
+    return {
+      userInfo: {
+        head: "",
+      },
+    };
+  },
+  created() {
+    let userInfo = uni.getStorageSync("userInfo");
+    console.log(userInfo);
+    this.userInfo = userInfo;
   },
   methods: {
     // 跳转到 官网

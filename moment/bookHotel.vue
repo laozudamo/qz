@@ -1,32 +1,40 @@
 <template>
   <view class="template-index tn-safe-area-inset-bottom">
     <!-- 顶部自定义导航 -->
-    <tn-nav-bar
-      :style="{ paddingTop: vuex_custom_bar_height + 'px' }"
-      :beforeBack="beforeBack"
+    <tn-nav-bar :style="{ paddingTop: vuex_custom_bar_height + 'px' }"
       >民宿</tn-nav-bar
     >
 
+    <view
+      :style="{ paddingTop: vuex_custom_bar_height + 'px', margin: '20rpx' }"
+    >
+      <tn-input
+        v-model="params.keyword"
+        :autoHeight="true"
+        placeholder="输入地址搜索"
+        :border="true"
+        @confirm="confirm"
+      />
+    </view>
+
     <!-- 商家商品 start-->
     <view
-      :style="{ paddingTop: vuex_custom_bar_height + 40 + 'rpx' }"
       class="tn-flex tn-flex-wrap tn-margin-left-sm tn-margin-bottom-sm tn-margin-right-sm tn-margin-top-xs"
     >
       <block v-for="(item, index) in content" :key="index">
-        <view class="" style="width: 50%" @click="tn('/moment/hotelDetail')">
+        <view class="" style="width: 50%" @click="tn(item)">
           <view class="tn-blogger-content__wrap">
-            <view
-              class="image-picbook"
-              :style="'background-image:url(' + item.mainImage + ')'"
-            >
-              <view class="image-book"> </view>
+            <view class="image-picbook">
+              <view class="image-book">
+                <img height="200" width="160" :src="item.image" />
+              </view>
             </view>
 
             <view
               class="tn-blogger-content__label tn-text-justify tn-padding-sm"
             >
               <text class="tn-blogger-content__label__desc">{{
-                item.desc
+                item.feature
               }}</text>
             </view>
 
@@ -44,14 +52,14 @@
                     <text
                       class="tn-padding-right-sm tn-text-bold tn-color-purplered"
                       style="font-size: 38rpx"
-                      >{{ item.collectionCount }}</text
+                      >{{ item.price }}</text
                     >
                     <!-- <text class="tn-blogger-content__count-icon tn-icon-message"></text>
                       <text class="tn-padding-right-sm">{{ item.commentCount }}</text> -->
                     <text
                       class="tn-color-gray tn-text-sm"
                       style="font-size: 24rpx"
-                      >{{ item.likeCount }} 人购买</text
+                      >{{ item.soldOutQuantity }} 人购买</text
                     >
                   </view>
                 </view>
@@ -99,10 +107,19 @@
 </template>
 
 <script>
+import pickAdress from "@/components/john-pickAddress/pickAddress.vue";
+
+import { getList, detail } from "@/api/hotel.js";
 export default {
   name: "Index",
+  components: {
+    pickAdress,
+  },
   data() {
     return {
+      address: "",
+      show: false,
+
       cardCur: 0,
       isAndroid: true,
       swiperList: [
@@ -350,6 +367,11 @@ export default {
       ],
 
       tuniaoData: [],
+      params: {
+        pageIndex: 1,
+        pageSize: 1000,
+        keyword: "",
+      },
     };
   },
   created() {
@@ -359,8 +381,23 @@ export default {
     } else {
       this.isAndroid = true;
     }
+    this.getData();
   },
   methods: {
+    getData() {
+      getList(this.params).then((res) => {
+        console.log(res);
+        const { list } = res;
+        this.content = list;
+      });
+    },
+    confirm() {
+      this.getData();
+    },
+    openAddress() {
+      this.show = true;
+      // this.$refs.pickAdress.onOpen();
+    },
     // cardSwiper
     cardSwiper(e) {
       this.cardCur = e.detail.current;
@@ -370,9 +407,9 @@ export default {
       this.cardCur2 = e.detail.current;
     },
     // 跳转
-    tn(e) {
+    tn(item) {
       uni.navigateTo({
-        url: e,
+        url: "/moment/hotelDetail?id=" + item.id,
       });
     },
   },
@@ -1013,7 +1050,7 @@ export default {
 }
 
 .image-book {
-  padding: 150rpx 0rpx;
+  // padding: 150rpx 0rpx;
   font-size: 16rpx;
   font-weight: 300;
   position: relative;

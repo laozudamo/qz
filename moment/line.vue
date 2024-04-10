@@ -1,9 +1,7 @@
 <template>
   <view class="template-index tn-safe-area-inset-bottom">
     <!-- 顶部自定义导航 -->
-    <tn-nav-bar
-      :style="{ paddingTop: vuex_custom_bar_height + 'px' }"
-      :beforeBack="beforeBack"
+    <tn-nav-bar :style="{ paddingTop: vuex_custom_bar_height + 'px' }"
       >跟团游</tn-nav-bar
     >
 
@@ -122,24 +120,18 @@
       class="tn-flex tn-flex-wrap tn-margin-left-sm tn-margin-bottom-sm tn-margin-right-sm tn-margin-top-xs"
     >
       <block v-for="(item, index) in content" :key="index">
-        <view
-          class=""
-          style="width: 50%"
-          @click="tn('/preferredPages/product')"
-        >
+        <view class="" style="width: 50%" @click="tn(item)">
           <view class="tn-blogger-content__wrap">
-            <view
-              class="image-picbook"
-              :style="'background-image:url(' + item.mainImage + ')'"
-            >
+            <view class="image-picbook">
               <view class="image-book"> </view>
+              <img width="160" height="200" :src="item.image" alt="" />
             </view>
 
             <view
               class="tn-blogger-content__label tn-text-justify tn-padding-sm"
             >
               <text class="tn-blogger-content__label__desc">{{
-                item.desc
+                item.itineraryFeature
               }}</text>
             </view>
 
@@ -157,14 +149,14 @@
                     <text
                       class="tn-padding-right-sm tn-text-bold tn-color-purplered"
                       style="font-size: 38rpx"
-                      >{{ item.collectionCount }}</text
+                      >{{ item.cost }}</text
                     >
                     <!-- <text class="tn-blogger-content__count-icon tn-icon-message"></text>
                       <text class="tn-padding-right-sm">{{ item.commentCount }}</text> -->
                     <text
                       class="tn-color-gray tn-text-sm"
                       style="font-size: 24rpx"
-                      >{{ item.likeCount }} 人购买</text
+                      >{{ item.distance }} 人购买</text
                     >
                   </view>
                 </view>
@@ -212,6 +204,7 @@
 </template>
 
 <script>
+import { getLine } from "@/api/line.js";
 export default {
   name: "Index",
   data() {
@@ -303,164 +296,166 @@ export default {
         },
       ],
 
-      content: [
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line3.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line4.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-      ],
+      content: [],
+
+      // content: [
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line1.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line2.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line3.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line4.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line2.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line2.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      // ],
 
       tuniaoData: [],
     };
@@ -472,8 +467,23 @@ export default {
     } else {
       this.isAndroid = true;
     }
+    this.getData();
+    console.log("2222");
   },
   methods: {
+    getData() {
+      let params = {
+        // orderByAsc: true,
+        pageIndex: 1,
+        pageSize: 1000,
+        // keyword: "",
+      };
+      getLine(params).then((res) => {
+        const { list } = res;
+        this.content = list;
+        // this.resumeList = list;
+      });
+    },
     // cardSwiper
     cardSwiper(e) {
       this.cardCur = e.detail.current;
@@ -483,9 +493,9 @@ export default {
       this.cardCur2 = e.detail.current;
     },
     // 跳转
-    tn(e) {
+    tn(item) {
       uni.navigateTo({
-        url: e,
+        url: "/preferredPages/product?id=" + item.id,
       });
     },
   },
@@ -1126,7 +1136,7 @@ export default {
 }
 
 .image-book {
-  padding: 150rpx 0rpx;
+  padding: 10rpx 0rpx;
   font-size: 16rpx;
   font-weight: 300;
   position: relative;

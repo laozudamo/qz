@@ -26,44 +26,9 @@
       "root": "homePages",
       "pages": [
         {
-          "path": "about",
-          "style": {
-            "navigationBarTitleText": "关于我们",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
           "path": "search",
           "style": {
             "navigationBarTitleText": "全局搜索",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "hot",
-          "style": {
-            "navigationBarTitleText": "今日热榜",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "navigation",
-          "style": {
-            "navigationBarTitleText": "全站导航",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "profession",
-          "style": {
-            "navigationBarTitleText": "前端业务",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "loading",
-          "style": {
-            "navigationBarTitleText": "加载效果",
             "enablePullDownRefresh": false
           }
         }
@@ -90,41 +55,6 @@
           "path": "edit",
           "style": {
             "navigationBarTitleText": "编辑发布",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "advertise",
-          "style": {
-            "navigationBarTitleText": "广告页",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "news",
-          "style": {
-            "navigationBarTitleText": "资讯详情",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "king",
-          "style": {
-            "navigationBarTitleText": "名片王者",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "business",
-          "style": {
-            "navigationBarTitleText": "智能名片",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "group",
-          "style": {
-            "navigationBarTitleText": "广场",
             "enablePullDownRefresh": false
           }
         },
@@ -181,43 +111,7 @@
     },
     {
       "root": "activityPages",
-      "pages": [
-        {
-          "path": "map",
-          "style": {
-            "navigationBarTitleText": "地图打卡",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "topic",
-          "style": {
-            "navigationBarTitleText": "快速答题",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "study",
-          "style": {
-            "navigationBarTitleText": "课程学习",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "project",
-          "style": {
-            "navigationBarTitleText": " 开心项目",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "planet",
-          "style": {
-            "navigationBarTitleText": "活动星球",
-            "enablePullDownRefresh": false
-          }
-        }
-      ]
+      "pages": []
     },
     {
       "root": "preferredPages",
@@ -261,27 +155,6 @@
           "path": "website",
           "style": {
             "navigationBarTitleText": "品牌官网",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "redeem",
-          "style": {
-            "navigationBarTitleText": "积分兑换",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "award",
-          "style": {
-            "navigationBarTitleText": "免单活动",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "awardget",
-          "style": {
-            "navigationBarTitleText": "免单获取",
             "enablePullDownRefresh": false
           }
         }

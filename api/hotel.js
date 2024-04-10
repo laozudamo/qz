@@ -4,7 +4,7 @@ export const getList = (params) => http.get('/admin/homestay/getHomestayPage', {
 
 export const creat = (data) => http.post('/admin/chatRecord/addChatRecord', data)
 
-export const detail = (id) => http.get('/admin/homestay/getHomestayPage/' + id)
+export const detail = (id) => http.get('/admin/homestay/getHomestay/' + id)
 
 
 

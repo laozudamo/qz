@@ -8,44 +8,18 @@
       </view>
     </tn-nav-bar>
 
-    <swiper
-      class="card-swiper"
-      :circular="true"
-      :autoplay="true"
-      duration="500"
-      interval="5000"
-      @change="cardSwiper"
-    >
-      <swiper-item
-        v-for="(item, index) in swiperList"
-        :key="index"
-        :class="cardCur == index ? 'cur' : ''"
-      >
-        <view class="swiper-item image-banner">
-          <image
-            :src="item.url"
-            mode="aspectFill"
-            v-if="item.type == 'image'"
-          ></image>
-        </view>
-      </swiper-item>
-    </swiper>
-    <view class="indication">
-      <block v-for="(item, index) in swiperList" :key="index">
-        <view class="spot" :class="cardCur == index ? 'active' : ''"></view>
-      </block>
-    </view>
+    <img width="100%" height="200" :src="theData.image" />
 
     <view class="tn-margin">
       <view class="tn-flex tn-flex-row-between">
         <view class="justify-content-item tn-text-bold tn-text-xxl">
-          游在黄姚 ｜ 7天6晚 ｜ 广西三月三
+          {{ theData.itineraryFeature }}
         </view>
       </view>
       <view class="tn-flex tn-flex-row-between tn-margin-top">
         <view class="justify-content-item tn-text-bold tn-color-purplered">
           <text class="tn-text-sm">￥</text>
-          <text class="" style="font-size: 50rpx">118 / 人</text>
+          <text class="" style="font-size: 50rpx">{{ theData.cost }} / 人</text>
         </view>
         <view class="justify-content-item tn-color-gray tn-padding-top-xs">
           <view class="">已售 729</view>
@@ -62,7 +36,7 @@
         <view class="tn-flex tn-flex-col-center">
           <view class="tn-flex-1">费用</view>
           <view class="tn-margin-left-sm" style="font-size: 28rpx"
-            >1999 元</view
+            >{{ theData.cost }} 元</view
           >
         </view>
       </tn-list-cell>
@@ -70,14 +44,16 @@
       <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
         <view class="tn-flex tn-flex-col-center">
           <view class="tn-flex-1">活动时长</view>
-          <view class="tn-margin-left-sm" style="font-size: 28rpx">7天6晚</view>
+          <view class="tn-margin-left-sm" style="font-size: 28rpx"
+            >{{ theData.activityDuration }} 天</view
+          >
         </view>
       </tn-list-cell>
       <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
         <view class="tn-flex tn-flex-col-center">
           <view class="tn-flex-1">路程</view>
           <view class="tn-margin-left-sm" style="font-size: 28rpx"
-            >1800 km</view
+            >{{ theData.distance }} km</view
           >
         </view>
       </tn-list-cell>
@@ -183,10 +159,7 @@
       <view class="king-item tn-icon-circle-fill">
         <view class="resume2" style="padding: 20rpx">
           <text class="">
-            《中国国旅官方直营》本行程已超过2000多人的选择，销量对比证明，国旅直营产品更受消费者的厚爱！
-            中国国旅产品承诺：真纯玩+不进任何购物店+餐标全面升级，不是每个产品都可如此承诺
-            《纯玩产品 杜绝山寨 高质/高性价比 贵州精选热门线路》
-            贴心周到的软性的服务！出游有保障！有对比才知道好坏！请游客仔细识别!
+            {{ theData.productFeature }}
           </text>
         </view>
       </view>
@@ -198,10 +171,7 @@
       <view class="king-item tn-icon-circle-fill">
         <view class="resume2" style="padding: 20rpx">
           <text class="">
-            《中国国旅官方直营》本行程已超过2000多人的选择，销量对比证明，国旅直营产品更受消费者的厚爱！
-            中国国旅产品承诺：真纯玩+不进任何购物店+餐标全面升级，不是每个产品都可如此承诺
-            《纯玩产品 杜绝山寨 高质/高性价比 贵州精选热门线路》
-            贴心周到的软性的服务！出游有保障！有对比才知道好坏！请游客仔细识别!
+            {{ theData.itineraryIntroduction }}
           </text>
         </view>
       </view>
@@ -215,7 +185,7 @@
       <view class="king-item tn-icon-circle-fill">
         <view class="resume2" style="padding: 20rpx">
           <text class="">
-            温馨提示：由于贵州旅游淡旺季差异较大，以及天气、人数、气候、道路交通状况和不可抗力因素等其他原因，行程游览顺序可能临时出现调整改变，行程披露游览顺序仅供参考。行程游览顺序会根据实际情况临时调整景区游览顺序。具体游览顺序只能以出发前1天客服或上团导游告知的游览顺序为准。除游览顺序可能临时调整，景区游览时间和服务标准均保持不变。客人购买本产品及表示客人知晓并同意旅行社可能临时调整游览顺序，不能因为游览顺序改变而进行后续投诉或临时取消。当然行程也可能按原网页顺序进行安排。所以是否调整游览顺序均不影响游客对景区的游览参观时间和服务标准
+            {{ theData.costDescription }}
           </text>
         </view>
       </view>
@@ -226,11 +196,7 @@
       <view class="king-item tn-icon-circle-fill">
         <view class="resume2" style="padding: 20rpx">
           <text class="">
-            1、行程中所列出发与到达时间只能做参考，不能做承诺要约；如遇节假日，堵车以及突发状况，以及季节变化时间会有所调整和改变，具体可以详询客服。
-            其他贵阳当地出发产品推荐：
-            1、贵阳出发：黄果树+西江千户苗寨+荔波小七孔纯玩3日游；点击或收索预定产品编号：18179206
-            2、贵阳出发：贵阳+黄果树2日纯玩游；点击或收索预定产品编号：18542604
-            3、贵阳出发：西江千户苗寨+荔波小七孔2日纯玩游；点击或收索预定产品编号：18542497
+            {{ theData.preTripTips }}
           </text>
         </view>
       </view>
@@ -254,12 +220,14 @@
 </template>
 
 <script>
+import { detailLine } from "@/api/line.js";
 import template_page_mixin from "@/libs/mixin/template_page_mixin.js";
 export default {
   name: "TemplateProduct",
   mixins: [template_page_mixin],
   data() {
     return {
+      theData: {},
       cardCur: 0,
       swiperList: [
         {
@@ -1275,6 +1243,14 @@ export default {
         },
       ],
     };
+  },
+  onLoad(options) {
+    if (options.id) {
+      detailLine(options.id).then((res) => {
+        this.theData = res;
+        console.log(res);
+      });
+    }
   },
   methods: {
     // cardSwiper

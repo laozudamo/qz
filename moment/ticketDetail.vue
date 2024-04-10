@@ -39,16 +39,18 @@
     <view class="tn-margin">
       <view class="tn-flex tn-flex-row-between">
         <view class="justify-content-item tn-text-bold tn-text-xxl">
-          香港迪士尼乐园
+          {{ theData.name }}
         </view>
       </view>
       <view class="tn-flex tn-flex-row-between tn-margin-top">
         <view class="justify-content-item tn-text-bold tn-color-purplered">
           <text class="tn-text-sm">￥</text>
-          <text class="" style="font-size: 50rpx">816</text>
+          <text class="" style="font-size: 50rpx"
+            >{{ theData.price }} / 人</text
+          >
         </view>
         <view class="justify-content-item tn-color-gray tn-padding-top-xs">
-          <view class="">已售 999</view>
+          <view class="">已售 {{ theData.soldOutQuantity }}</view>
         </view>
       </view>
     </view>
@@ -58,31 +60,31 @@
 
     <!-- 更多信息-->
     <view class="tn-padding-top-sm tn-padding-bottom-sm">
-      <!-- <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
-        <view class="tn-flex tn-flex-col-center">
-          <view class="tn-flex-1">空间</view>
-          <view class="tn-margin-left-sm" style="font-size: 28rpx"
-            >1999 元</view
-          >
-        </view>
-      </tn-list-cell> -->
-
       <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
         <view class="tn-flex tn-flex-col-center">
-          <view class="tn-flex-1">位 置</view>
+          <view class="tn-flex-1">费用</view>
           <view class="tn-margin-left-sm" style="font-size: 28rpx"
-            >香港大屿山香港迪士尼乐园度假区</view
+            >{{ theData.price }} 元</view
           >
         </view>
       </tn-list-cell>
-      <!-- <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
+
+      <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
+        <view class="tn-flex tn-flex-col-center">
+          <view class="tn-flex-1">活动时长</view>
+          <view class="tn-margin-left-sm" style="font-size: 28rpx"
+            >{{ theData.activityDuration }} 天</view
+          >
+        </view>
+      </tn-list-cell>
+      <tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="34">
         <view class="tn-flex tn-flex-col-center">
           <view class="tn-flex-1">路程</view>
           <view class="tn-margin-left-sm" style="font-size: 28rpx"
-            >1800 km</view
+            >{{ theData.location }} km</view
           >
         </view>
-      </tn-list-cell> -->
+      </tn-list-cell>
     </view>
 
     <!-- 边距间隔 -->
@@ -90,7 +92,9 @@
 
     <view class="tn-margin">
       <view class="tn-flex tn-flex-row-between">
-        <view class="justify-content-item tn-text-bold tn-text-xl"> 特色 </view>
+        <view class="justify-content-item tn-text-bold tn-text-xl">
+          产品特色
+        </view>
       </view>
     </view>
 
@@ -134,73 +138,19 @@
       <view class="king-item tn-icon-circle-fill">
         <view class="resume2" style="padding: 20rpx">
           <text class="">
-            香港迪士尼乐园(Hong Kong
-            Disneyland)是全球第五座、亚洲第二座迪士尼乐园，包括七大主题园区、三大迪士尼主题酒店（香港迪士尼乐园酒店、迪士尼探索家度假酒店、迪士尼好莱坞酒店）、多家不同风格的主题餐厅，在不如果带小朋友来的话不妨参加适合亲子一齐动手的“米奇厨师班”等互动活动。“迪士尼光影汇”夜间巡游：巡游由7组全新主题的花车组成，配上超过74万粒独立LED灯，以跃动光影展现不同的迪士
-            尼及迪士尼•皮克斯动画故事，照亮美国小镇大街的每个晚上。特色区域介绍：美国小镇大街：所有宾客踏进乐园后都会首先置身于美国小镇大街，在这里能看到19世纪美国繁华景象，感受怀旧美式魅力。在美国小镇大
-            街，可以乘坐怀旧蒸汽列车，欣赏乐园景色；到百货店尽情购物；还能与迪士尼朋友见面。明日世界在明日世界，千万不要错过室内过山车“飞越太空山”；在“驰车天地”驾着未来跑车驰骋；以及去“幸会史迪仔”与这个蓝色外星小怪兽全接触，体验搞怪惊喜！探险世界：勇敢的你一定要到“森林河流之旅”；而以迪士尼经典动画《狮
-            子王》改编而成的百老汇式大型歌舞剧《狮子王庆典》，保证令你叹为观止！更可乘木筏前往泰山树屋，在历奇喷水池体会出其不意的惊喜。反斗奇兵大本营：他是乐园扩建计划中落成的项目。为亚洲首创。在反斗奇兵大本营，你可以像影片中胡迪那样，坐上安第的遥控车，飞快奔驰！冲天遥控车是反斗奇兵大本营惊险刺激的游乐设
-            施，能在27米高的“U”形轨道上高速驰骋，真是乐不可支！灰熊山谷：坐上特有创新的“灰熊山高速矿车”
-            ，深入山谷探索黄金的惊险历程；投入“喷泉山谷”与水花大玩特玩；又或者到金石检测所，抱着珍贵无比的幸运金石拍照留念，留下你的寻金传奇。迷离庄园：”于2013年5月17日奇幻登场。在这个全球首创的主题园区里，你将进入热带雨林深处，探访探险家亨利爵士的“迷离大宅”，乘坐“迷离庄园电磁厢车”，欣赏亨利爵士的罕有收藏品。经典必玩游乐项目：灰熊山极速矿车：乘坐极速矿车，飞越灰熊山谷，在轨道纵横交错的矿洞内穿梭飞驰。星战极速穿梭：一场星战超时速之旅，带你穿梭於《星球大战™》的激烈战火之中！森林河流之旅：勇敢的船长将带领您去寻幽探秘，开启一段神秘而人迹罕至的探险河旅程。
+            {{ theData.feature }}
           </text>
         </view>
       </view>
       <!-- 商品1 end-->
     </view>
 
+    <!-- 同款 -->
     <view class="" v-if="current == 1">
-      <!-- 商品1 start-->
       <view class="king-item tn-icon-circle-fill">
         <view class="resume2" style="padding: 20rpx">
           <text class="">
-            幻想世界游玩设施 Halloween 诡趣花园 白雪公主许愿洞 疯帽子旋转杯
-            灰姑娘旋转木马 米奇幻想曲 石中神剑 童话园林 - 由潘多拉呈献
-            香港迪士尼乐园铁路－幻想世界火车站 小飞象旋转世界 “小小世界”
-            小熊维尼历险之旅 探险世界游玩设施 历奇喷水池 前往泰山树屋的竹筏
-            森林河流之旅 泰山树屋
-          </text>
-        </view>
-        <view class="resume2" style="padding: 20rpx">
-          <text class="">
-            香港迪士尼乐园度假区至香港国际机场接送服务
-            香港迪士尼乐园度假区至香港国际机场接送服务
-            路线：香港国际机场至香港迪士尼乐园度假区酒店
-            服务时间：每天早上10点至晚上8点，每30分钟一班。
-            路线：香港迪士尼乐园度假区酒店至香港国际机场 成人（12岁或以上）：
-            港币$50 小童（3-11岁）： 港币$25 婴儿（3岁或以下）：免费
-            香港西九龙高铁站至香港迪士尼乐园度假区接送服务
-            香港西九龙高铁站至香港迪士尼乐园度假区酒店
-            路线：香港西九龙高铁站至香港迪士尼乐园度假区酒店
-            服务时间：每天早上10点至晚上6点
-            行李运送及穿梭巴士服务时间：（已预定香港迪士尼乐园度假区酒店住宿之宾客适用）
-            行李运送服务时间：早上9:00至下午5:30（只提供由客务中心至度假区酒店）
-            穿梭巴士服务：早上10点至晚上6点（只提供由客户中心至度假区酒店；先到先得，不设预定。
-          </text>
-        </view>
-      </view>
-      <!-- 商品1 end-->
-    </view>
-
-    <!-- 热卖 -->
-    <view class="" v-if="current == 2">
-      <view class="king-item tn-icon-circle-fill">
-        <view class="resume2" style="padding: 20rpx">
-          <text class="">
-            温馨提示：由于贵州旅游淡旺季差异较大，以及天气、人数、气候、道路交通状况和不可抗力因素等其他原因，行程游览顺序可能临时出现调整改变，行程披露游览顺序仅供参考。行程游览顺序会根据实际情况临时调整景区游览顺序。具体游览顺序只能以出发前1天客服或上团导游告知的游览顺序为准。除游览顺序可能临时调整，景区游览时间和服务标准均保持不变。客人购买本产品及表示客人知晓并同意旅行社可能临时调整游览顺序，不能因为游览顺序改变而进行后续投诉或临时取消。当然行程也可能按原网页顺序进行安排。所以是否调整游览顺序均不影响游客对景区的游览参观时间和服务标准
-          </text>
-        </view>
-      </view>
-    </view>
-
-    <!-- 爆款 -->
-    <view class="" v-if="current == 3">
-      <view class="king-item tn-icon-circle-fill">
-        <view class="resume2" style="padding: 20rpx">
-          <text class="">
-            1、行程中所列出发与到达时间只能做参考，不能做承诺要约；如遇节假日，堵车以及突发状况，以及季节变化时间会有所调整和改变，具体可以详询客服。
-            其他贵阳当地出发产品推荐：
-            1、贵阳出发：黄果树+西江千户苗寨+荔波小七孔纯玩3日游；点击或收索预定产品编号：18179206
-            2、贵阳出发：贵阳+黄果树2日纯玩游；点击或收索预定产品编号：18542604
-            3、贵阳出发：西江千户苗寨+荔波小七孔2日纯玩游；点击或收索预定产品编号：18542497
+            {{ theData.detail }}
           </text>
         </view>
       </view>
@@ -224,12 +174,14 @@
 </template>
 
 <script>
+import { detailLine } from "@/api/line.js";
 import template_page_mixin from "@/libs/mixin/template_page_mixin.js";
 export default {
   name: "TemplateProduct",
   mixins: [template_page_mixin],
   data() {
     return {
+      theData: {},
       cardCur: 0,
       swiperList: [
         {
@@ -238,7 +190,7 @@ export default {
           title: "",
           name: "",
           text: "",
-          url: "/static/tickets/t1.jpg",
+          url: "/static/banner/b1.jpeg",
         },
         {
           id: 1,
@@ -246,1031 +198,83 @@ export default {
           title: "",
           name: "",
           text: "",
-          url: "/static/tickets/t2.jpg",
+          url: "/static/banner/b1.jpeg",
         },
         {
-          id: 3,
+          id: 2,
           type: "image",
           title: "海量分享",
           name: "总有你想不到的创意",
           text: "",
-          url: "/static/tickets/t3.jpg",
-        },
-        {
-          id: 4,
-          type: "image",
-          title: "海量分享",
-          name: "总有你想不到的创意",
-          text: "",
-          url: "/static/tickets/t4.jpg",
-        },
-        {
-          id: 5,
-          type: "image",
-          title: "海量分享",
-          name: "总有你想不到的创意",
-          text: "",
-          url: "/static/tickets/t5.jpg",
+          url: "/static/banner/b2.jpeg",
         },
       ],
       current: 0,
-      fixedList: [{ name: "详情" }, { name: "游玩详情" }],
-      content: [
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/prototype2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["炸串", "火锅"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/prototype1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/computer2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/phonecase1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/phonecase2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "我们都是好孩子",
-          mainImage: "https://resource.tuniaokj.com/images/shop/watch1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/sticker.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/card.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
+      fixedList: [
+        { name: "行程特色" },
+        { name: "行程简介" },
+        { name: "费用说明" },
+        { name: "行前必看" },
       ],
-      content2: [
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["炸串", "火锅"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/prototype1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/prototype2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/sticker.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/card.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/computer2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/phonecase1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/phonecase2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "我们都是好孩子",
-          mainImage: "https://resource.tuniaokj.com/images/shop/watch1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-      ],
-      content3: [
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/phonecase2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "我们都是好孩子",
-          mainImage: "https://resource.tuniaokj.com/images/shop/watch1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["炸串", "火锅"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/prototype1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/prototype2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/sticker.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/card.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/computer2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/phonecase1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-      ],
-      content4: [
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/card.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/computer2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/phonecase2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "我们都是好孩子",
-          mainImage: "https://resource.tuniaokj.com/images/shop/watch1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["炸串", "火锅"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/prototype1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/prototype2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/sticker.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "可我会像",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "免费 开心",
-          mainImage: "https://resource.tuniaokj.com/images/shop/phonecase1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-              },
-              {
-                src: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 265,
-          commentCount: 22,
-          likeCount: 62,
-        },
-      ],
+
       countOptions: [
-        // {
-        //   icon: "star",
-        //   text: "收藏",
-        // },
-        // {
-        //   icon: "share-circle",
-        //   text: "分享",
-        // },
+        {
+          icon: "star",
+          text: "收藏",
+        },
+        {
+          icon: "share-circle",
+          text: "分享",
+        },
       ],
       customButtonGroups: [
         {
-          text: "咨询",
+          text: "咨询客服",
           backgroundColor: "tn-cool-bg-color-5",
           color: "#FFFFFF",
         },
         {
-          text: "立即预定",
+          text: "立即购买",
           backgroundColor: "tn-cool-bg-color-15--reverse",
           color: "#FFFFFF",
         },
       ],
       tagList: [
         {
-          color: "gray",
-          title: "TOMMY & JACKY",
+          color: "red",
+          title: "全程零购物",
         },
         {
-          color: "gray",
-          title: "MICKY",
+          color: "cyan",
+          title: "骑大象",
         },
         {
-          color: "gray",
-          title: "哈利波特",
+          color: "blue",
+          title: "泼水节",
         },
         {
-          color: "gray",
-          title: "伏地魔",
+          color: "green",
+          title: "壮丽山水",
         },
         {
-          color: "gray",
-          title: "不服输的辛巴",
+          color: "orange",
+          title: "北国风光",
         },
       ],
     };
+  },
+  onLoad(options) {
+    if (options.id) {
+      detailLine(options.id).then((res) => {
+        this.theData = res;
+        console.log(res);
+      });
+    }
   },
   methods: {
     // cardSwiper
     cardSwiper(e) {
       this.cardCur = e.detail.current;
-    },
-    onButtonClick() {
-      uni.showToast({
-        mask: false,
-        icon: "none",
-        title: "预定成功",
-      });
-      setTimeout(() => {
-        uni.navigateBack();
-      }, 1000);
     },
     // 跳转
     tn(e) {

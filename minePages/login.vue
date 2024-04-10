@@ -260,6 +260,8 @@
 
 <script>
 import { userLogin } from "@/api/index.js";
+import { userInfo } from "@/api/user.js";
+
 import template_page_mixin from "@/libs/mixin/template_page_mixin.js";
 export default {
   name: "templateLogin",
@@ -303,11 +305,15 @@ export default {
         const { token } = res;
         uni.setStorageSync("token", token);
 
-        setTimeout(() => {
-          uni.redirectTo({
-            url: "/pages/index",
-          });
-        }, 1000);
+        userInfo().then((res) => {
+          uni.setStorageSync("userInfo", res);
+
+          setTimeout(() => {
+            uni.redirectTo({
+              url: "/pages/index",
+            });
+          }, 1000);
+        });
       });
     },
     // 切换模式

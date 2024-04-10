@@ -46,13 +46,14 @@
         style="border-radius: 10rpx"
       >
         <textarea
+          v-model="content"
           maxlength="500"
           placeholder="说点什么 , 万一火了呢"
           placeholder-style="color:#AAAAAA"
         ></textarea>
       </view>
 
-      <view
+      <!-- <view
         class="tn-flex tn-flex-row-between tn-flex-col-center tn-padding-top-xl tn-margin"
       >
         <view class="tn-flex justify-content-item">
@@ -79,17 +80,18 @@
           <text class="tn-padding-xs">清空上传</text>
           <text class="tn-icon-delete"></text>
         </view>
-      </view>
+      </view> -->
 
-      <view class="tn-margin-left tn-padding-top-xs">
+      <!-- <view class="tn-margin-left tn-padding-top-xs">
         <tn-image-upload-drag
           ref="imageUpload"
           :action="action"
           :width="236"
-          :height="236"
           :formData="formData"
+          :height="236"
           :fileList="fileList"
           :disabled="disabled"
+          :beforeUpload="beforeUpload"
           :autoUpload="autoUpload"
           :maxCount="maxCount"
           :showUploadList="showUploadList"
@@ -98,9 +100,9 @@
           :customBtn="customBtn"
           @sort-list="onSortList"
         />
-      </view>
+      </view> -->
 
-      <view
+      <!-- <view
         class="tn-flex tn-flex-row-between tn-flex-col-center tn-padding-top-xl tn-margin"
       >
         <view class="tn-flex justify-content-item">
@@ -135,7 +137,7 @@
         >
           <text class="tn-tag-content__item--prefix">#</text> {{ item.title }}
         </view>
-      </view>
+      </view> -->
 
       <!-- 悬浮按钮-->
       <view class="tn-flex tn-footerfixed">
@@ -148,7 +150,7 @@
             width="60%"
             shadow
             fontBold
-            @tap="upload"
+            @tap="submit"
           >
             <!-- <text class="tn-icon-light tn-padding-right-xs tn-color-black"></text> -->
             <text class="tn-color-black">发 布</text>
@@ -165,12 +167,14 @@
 </template>
 
 <script>
+import { creat } from "@/api/moment.js";
 import template_page_mixin from "@/libs/mixin/template_page_mixin.js";
 export default {
   name: "TemplateEdit",
   mixins: [template_page_mixin],
   data() {
     return {
+      content: "",
       tagList: [
         {
           color: "red",
@@ -217,47 +221,90 @@ export default {
           title: "萌宠",
         },
       ],
-      action: "https://www.hualigs.cn/api/upload",
+      // action: "http://175.178.245.37:8888/common/upload",
       // action: '',
-      formData: {
-        apiType: "this,ali",
-        token: "dffc1e06e636cff0fdf7d877b6ae6a2e",
-        image: null,
-      },
-      fileList: [
-        { url: "https://resource.tuniaokj.com/images/shop/bag1.jpg" },
-        { url: "https://resource.tuniaokj.com/images/shop/bag2.jpg" },
-        { url: "https://resource.tuniaokj.com/images/shop/cup1.jpg" },
-        { url: "https://resource.tuniaokj.com/images/shop/cup2.jpg" },
-      ],
-      showUploadList: true,
-      customBtn: false,
-      autoUpload: true,
-      showProgress: false,
-      deleteable: true,
-      customStyle: false,
-      maxCount: 9,
-      disabled: false,
+      // formData: {
+      //   originalFilename: "",
+      //   filename: "",
+      //   url: "",
+      //   size: 0,
+      //   sizeMb: 10,
+      // },
+      // fileList: [],
+      // showUploadList: true,
+      // customBtn: false,
+      // autoUpload: true,
+      // showProgress: false,
+      // deleteable: true,
+      // customStyle: false,
+      // maxCount: 9,
+      // disabled: false,
     };
   },
   onLoad() {},
   methods: {
+    submit() {
+      let data = {
+        content: this.content,
+        villageId: 0,
+        avatar: "",
+        name: "jack",
+        tag: "hi, lucy, wang",
+        // image: "string",
+        dislikeCount: 0,
+        likeCount: 0,
+        commentCount: 0,
+        shareCount: 0,
+      };
+
+      creat(data).then((res) => {
+        console.log(res);
+        uni.showToast({
+          title: "发布成功",
+          duration: 2000,
+        });
+        setTimeout(() => {
+          uni.navigateBack({
+            delta: 1,
+          });
+        });
+      });
+      console.log("content", this.content);
+    },
     // 跳转
     tn(e) {
       uni.navigateTo({
         url: e,
       });
     },
+    beforeUpload(index, lists) {
+      // let obj = {
+      //   id: 0,
+      //   originalFilename: "string",
+      //   filename: "string",
+      //   url: "string",
+      //   size: 0,
+      //   sizeMb: 0,
+      // };
+      // console.log("before upload", lists);
+      // let tmpdata = lists[0].data.file;
+      // let url = lists[0].data.url;
+      // this.formData.size = tmpdata.size;
+      // this.formData.filename = tmpdata.name;
+      // this.formData.originalFilename = tmpdata.name;
+      // this.formData.url = url;
+      return;
+    },
     // 手动上传文件
     upload() {
-      uni.showToast({
-        title: "发布成功",
-        icon: "none",
-        mask: true,
-      });
-      setTimeout(() => {
-        uni.navigateBack();
-      }, 1000);
+      // uni.showToast({
+      //   title: "发布成功",
+      //   icon: "none",
+      //   mask: true,
+      // });
+      // setTimeout(() => {
+      //   uni.navigateBack();
+      // }, 1000);
       // this.$refs.imageUpload.upload()
     },
     // 手动清空列表

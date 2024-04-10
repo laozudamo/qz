@@ -219,7 +219,7 @@
             </view>
           </view>
         </view>
-        <view class="tn-flex-1 tn-margin-sm tn-radius" @click="navCreate">
+        <!-- <view class="tn-flex-1 tn-margin-sm tn-radius" @click="navCreate">
           <view
             class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
           >
@@ -232,8 +232,8 @@
               <text class="tn-text-ellipsis">发起活动</text>
             </view>
           </view>
-        </view>
-        <view class="tn-flex-1 tn-margin-sm tn-radius" @click="navBuild">
+        </view> -->
+        <!-- <view class="tn-flex-1 tn-margin-sm tn-radius" @click="navBuild">
           <view
             class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
           >
@@ -246,7 +246,7 @@
               <text class="tn-text-ellipsis">创建村庄</text>
             </view>
           </view>
-        </view>
+        </view> -->
       </view>
     </tn-landscape>
 

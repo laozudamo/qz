@@ -40,10 +40,7 @@
     </swiper>
 
     <view class="" v-if="true">
-      <view
-        :style="{ vuex_custom_bar_height: 0 + 'px' }"
-        @click="tn('/circlePages/ranking')"
-      >
+      <view :style="{ vuex_custom_bar_height: 0 + 'px' }">
         <view
           class="tn-flex tn-flex-row-between tn-bg-yellow tn-round tn-padding-xs tn-margin"
         >
@@ -178,7 +175,7 @@
             </view>
           </view>
         </view>
-        <view class="tn-flex-1 tn-margin-sm tn-radius" @click="navCreate">
+        <!-- <view class="tn-flex-1 tn-margin-sm tn-radius" @click="navCreate">
           <view
             class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
           >
@@ -204,8 +201,8 @@
             <view class="tn-color-white tn-text-sm tn-text-center">
               <text class="tn-text-ellipsis">创建村庄</text>
             </view>
-          </view>
-        </view>
+          </view> -->
+        <!-- </view> -->
       </view>
     </tn-landscape>
 

@@ -28,7 +28,7 @@
             ></view>
             <view
               class="custom-nav__search__text tn-padding-left-xs tn-color-white"
-              >搜索  模板</view
+              >搜索 模板</view
             >
           </view>
         </view> -->
@@ -78,79 +78,6 @@
         <view class="spot" :class="cardCur == index ? 'active' : ''"></view>
       </block>
     </view>
-
-    <!-- 方式12 start-->
-    <!-- <view v-if="isAndroid" class="tn-flex tn-margin-xs tn-padding-top-sm">
-      <view
-        class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius"
-        @click="tn('/homePages/hot')"
-      >
-        <view
-          class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
-        >
-          <view
-            class="icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-purplered--light tn-color-purplered"
-          >
-            <view class="tn-icon-fire-fill tn-three"></view>
-          </view>
-          <view class="tn-color-black tn-text-center">
-            <text class="tn-text-ellipsis">热点资讯</text>
-          </view>
-        </view>
-      </view>
-      <view
-        class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius"
-        @click="tn('/preferredPages/classify')"
-      >
-        <view
-          class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
-        >
-          <view
-            class="icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-indigo--light tn-color-indigo"
-          >
-            <view class="tn-icon-flower-fill tn-three"></view>
-          </view>
-          <view class="tn-color-black tn-text-center">
-            <text class="tn-text-ellipsis">商品分类</text>
-          </view>
-        </view>
-      </view>
-      <view
-        class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius"
-        @click="tn('/circlePages/business')"
-      >
-        <view
-          class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
-        >
-          <view
-            class="icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-purple--light tn-color-purple"
-          >
-            <view class="tn-icon-identity-fill tn-three"></view>
-          </view>
-          <view class="tn-color-black tn-text-center">
-            <text class="tn-text-ellipsis">智能名片</text>
-          </view>
-        </view>
-      </view>
-      <view
-        class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius"
-        @click="tn('/preferredPages/website')"
-      >
-        <view
-          class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
-        >
-          <view
-            class="icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-orange--light tn-color-orange"
-          >
-            <view class="tn-icon-star-fill tn-three"></view>
-          </view>
-          <view class="tn-color-black tn-text-center">
-            <text class="tn-text-ellipsis">星选门户</text>
-          </view>
-        </view>
-      </view>
-    </view> -->
-    <!-- 方式12 end-->
 
     <!-- 方式12 start-->
     <view class="tn-flex tn-margin-xs tn-padding-top-sm">
@@ -205,23 +132,7 @@
           </view>
         </view>
       </view>
-      <!-- <view
-        class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius"
-        @click="tn('/preferredPages/website')"
-      >
-        <view
-          class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
-        >
-          <view
-            class="icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-orange--light tn-color-orange"
-          >
-            <view class="tn-icon-star-fill"></view>
-          </view>
-          <view class="tn-color-black tn-text-center">
-            <text class="tn-text-ellipsis">精选村庄</text>
-          </view>
-        </view>
-      </view> -->
+  
     </view>
 
     <view class="tn-flex tn-margin-xs">
@@ -259,23 +170,7 @@
           </view>
         </view>
       </view>
-      <!-- <view
-        class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius"
-        @click="tn('/circlePages/business')"
-      >
-        <view
-          class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
-        >
-          <view
-            class="icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-purple--light tn-color-purple"
-          >
-            <view class="tn-icon-identity-fill"></view>
-          </view>
-          <view class="tn-color-black tn-text-center">
-            <text class="tn-text-ellipsis">优选</text>
-          </view>
-        </view>
-      </view> -->
+      
       <view
         class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius"
         @click="tn('/moment/cz')"
@@ -294,36 +189,6 @@
         </view>
       </view>
     </view>
-
-    <!-- 方式12 end-->
-
-    <!-- banner start-->
-    <!-- <view
-      class="tn-flex tn-flex-wrap tn-padding-xs"
-      @click="tn('/circlePages/advertise')"
-    >
-      <view class="" style="width: 100%">
-        <view
-          class="image-piccapsule tn-shadow-blur"
-          style="
-            background-image: url('https://resource.tuniaokj.com/images/capsule-banner/banner-tnmb.png');
-          "
-        >
-          <view class="image-capsule"> </view>
-        </view>
-      </view>
-    </view> -->
-    <!-- banner end-->
-
-    <!--    <view class="tn-margin-top">
-      <view class="nav_title--wrap">
-        <view class="nav_title tn-cool-bg-color-5">
-          <text class="tn-icon-copy tn-padding-right-sm"></text>
-          推 / 荐 / 博 / 主
-          <text class="tn-icon-copy tn-padding-left-sm"></text>
-        </view>
-      </view>
-    </view> -->
 
     <view
       class="tn-flex tn-flex-row-between tn-margin-top"
@@ -400,25 +265,7 @@
                 </view>
               </view>
             </view>
-            <!-- <view
-              class="tn-flex-1 tn-padding-sm tn-margin-left tn-margin-right"
-            >
-              <view
-                class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
-              >
-                <view class="">
-                  <view class="tn-text-xxl tn-color-orange">{{
-                    item.share
-                  }}</view>
-                </view>
-                <view
-                  class="tn-margin-top-xs tn-color-grey tn-text-df tn-text-center"
-                >
-                  <text class="tn-icon-share-circle"></text>
-                  <text class="tn-padding-left-xs">分享</text>
-                </view>
-              </view>
-            </view> -->
+        
             <view class="tn-flex-1 tn-padding-sm tn-margin-left">
               <view
                 class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
@@ -440,150 +287,33 @@
         </view>
       </swiper-item>
     </swiper>
-    <!--    <view class="indication">
-        <block v-for="(item,index) in resumeList" :key="index">
-            <view class="spot" :class="cardCur==index?'active':''"></view>
-        </block>
-    </view> -->
-
     <view class="">
       <view class="tn-flex tn-flex-row-between">
         <view class="justify-content-item tn-margin tn-text-bold tn-text-xxl">
           热门线路
         </view>
-        <!-- <view class="justify-content-item tn-margin tn-text-lg tn-color-grey">
-          <text class="tn-padding-xs">全部</text>
-          <text class="tn-icon-topics"></text>
-        </view> -->
       </view>
 
-      <!-- <view
-        class="tn-flex tn-flex-row-between"
-        @click="tn('/activityPages/project')"
-      >
-        <view class="justify-content-item tn-margin tn-text-bold tn-text-xxl">
-          热门旅游线路
-        </view>
-        <view class="justify-content-item tn-margin tn-text-lg tn-color-grey">
-          <text class="tn-padding-xs">全部</text>
-          <text class="tn-icon-topics"></text>
-        </view>
-      </view> -->
-      <!-- 
-      <view
-        class="tn-flex tn-margin-left tn-margin-right tn-margin-top-sm"
-        @click="tn('/circlePages/news')"
-      >
-        <view class="tn-flex-2">
-          <view
-            class="image-pic tn-margin-right tn-shadow-blur"
-            style="
-              background-image: url('https://resource.tuniaokj.com/images/content/rodion.jpg');
-            "
-          >
-            <view class="image-tuniao1"> </view>
-          </view>
-        </view>
-        <view class="tn-flex-1">
-          <view
-            class="image-pic tn-shadow-blur"
-            style="
-              background-image: url('https://resource.tuniaokj.com/images/shop/phonecase1.jpg');
-            "
-          >
-            <view class="image-tuniao2"> </view>
-          </view>
-          <view
-            class="image-pic tn-margin-top tn-shadow-blur"
-            style="
-              background-image: url('https://resource.tuniaokj.com/images/shop/banner1.jpg');
-            "
-          >
-            <view class="image-tuniao2"> </view>
-          </view>
-        </view>
-      </view> -->
-
-      <!-- <view class="tn-flex tn-flex-row-between tn-margin-top">
-        <view class="justify-content-item tn-margin tn-text-bold tn-text-xxl">
-          业务范围
-        </view>
-        <view class="justify-content-item tn-margin tn-text-lg tn-color-grey">
-          <text class="tn-padding-xs">全部</text>
-          <text class="tn-icon-topics"></text>
-        </view>
-      </view> -->
-
-      <!-- <view
-        class="tn-info__container tn-flex tn-flex-wrap tn-flex-col-center tn-flex-row-between tn-margin-left tn-margin-right"
-      >
-        <block v-for="(item, index) in tuniaoData" :key="index">
-          <view
-            class="tn-info__item tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-between tn-color-white tn-shadow-blur"
-            :style="'background-color:' + item.color + ';'"
-            @click="tn('/homePages/profession')"
-          >
-            <view
-              class="tn-info__item__left tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-left"
-            >
-              <view class="tn-info__item__left__content">
-                <view
-                  class="tn-info__item__left__content--title tn-text-bold"
-                  style="font-size: 38rpx"
-                  >{{ item.title }}</view
-                >
-                <view
-                  class="tn-info__item__left__content--data tn-padding-top-xs"
-                >
-                  {{ item.value }}
-                  <text class="tn-icon-right tn-padding-left-xs"></text>
-                </view>
-              </view>
-            </view>
-            <view class="tn-info__item__right">
-              <view class="tn-info__item__right--icon">
-                <view :class="[`tn-icon-${item.icon}`]"></view>
-              </view>
-            </view>
-            <view class="tn-info__item__bottom">
-              <view
-                class="name tn-text-sm tn-color-gray"
-                style="margin-left: -10rpx"
-              >
-                <text
-                  class="tn-icon-code tn-padding-right-xs"
-                  style="opacity: 0"
-                ></text>
-              </view>
-            </view>
-          </view>
-        </block>
-      </view> -->
     </view>
 
     <!-- 商家商品 start-->
     <view
       class="tn-flex tn-flex-wrap tn-margin-left-sm tn-margin-bottom-sm tn-margin-right-sm tn-margin-top-xs"
     >
-      <block v-for="(item, index) in content" :key="index">
-        <view
-          class=""
-          style="width: 50%"
-          @click="tn('/preferredPages/product')"
-        >
+      <block v-for="(item, index) in content" :key="item.id">
+        <view class="" style="width: 50%" @click="nv(item)">
           <view class="tn-blogger-content__wrap">
-            <view
-              class="image-picbook"
-              :style="'background-image:url(' + item.mainImage + ')'"
-            >
-              <view class="image-book"> </view>
+            <view class="image-picbook">
+              <view class="image-book">
+                <img width="170" height="200" :src="item.image" />
+              </view>
             </view>
 
             <view
               class="tn-blogger-content__label tn-text-justify tn-padding-sm"
             >
               <text class="tn-blogger-content__label__desc">{{
-                item.desc
+                item.itineraryFeature
               }}</text>
             </view>
 
@@ -601,14 +331,14 @@
                     <text
                       class="tn-padding-right-sm tn-text-bold tn-color-purplered"
                       style="font-size: 38rpx"
-                      >{{ item.collectionCount }}</text
+                      >{{ item.cost }}</text
                     >
                     <!-- <text class="tn-blogger-content__count-icon tn-icon-message"></text>
                       <text class="tn-padding-right-sm">{{ item.commentCount }}</text> -->
                     <text
                       class="tn-color-gray tn-text-sm"
                       style="font-size: 24rpx"
-                      >{{ item.likeCount }} 人购买</text
+                      >{{ item.distance }} 人购买</text
                     >
                   </view>
                 </view>
@@ -657,6 +387,7 @@
 
 <script>
 import { getList } from "@/api/index.js";
+import { getLine } from "@/api/line.js";
 export default {
   name: "Index",
   data() {
@@ -691,241 +422,14 @@ export default {
       ],
       cardCur2: 0,
       resumeList: [],
-      // resumeList: [
-      //   {
-      //     id: 0,
-      //     type: "image",
-      //     title: "李家庄",
-      //     name: "生态庄园",
-      //     hot: "1.29W",
-      //     share: "216",
-      //     love: "962",
-      //     avatar: "/static/avator.jpg",
-      //     url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
-      //   },
-      //   {
-      //     id: 1,
-      //     type: "image",
-      //     title: "高老屯",
-      //     name: "你的梦中情屯",
-      //     hot: "964",
-      //     share: "94",
-      //     love: "186",
-      //     avatar: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-      //     url: "https://resource.tuniaokj.com/images/resume/resume-bg2.jpg",
-      //   },
-      //   {
-      //     id: 2,
-      //     type: "image",
-      //     title: "高老屯",
-      //     name: "你的梦中情屯",
-      //     hot: "3.26K",
-      //     share: "146",
-      //     love: "379",
-      //     avatar: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-      //     url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
-      //   },
-      //   {
-      //     id: 3,
-      //     type: "image",
-      //     title: "高老屯",
-      //     name: "你的梦中情屯",
-      //     hot: "6.32K",
-      //     share: "133",
-      //     love: "432",
-      //     avatar: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-      //     url: "https://resource.tuniaokj.com/images/resume/resume-bg2.jpg",
-      //   },
-      //   {
-      //     id: 4,
-      //     type: "image",
-      //     title: "高老屯",
-      //     name: "你的梦中情屯",
-      //     hot: "8.65K",
-      //     share: "321",
-      //     love: "886",
-      //     avatar: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-      //     url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
-      //   },
-      // ],
-
-      content: [
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line3.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line4.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
-          mainImage: "/static/home/line2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 129,
-          commentCount: 999,
-          likeCount: 999,
-        },
-      ],
-
+      content: [],
       tuniaoData: [],
     };
   },
   created() {
     console.log("created");
+    this.getData();
 
-    let data = {
-      // orderByAsc: true,
-      pageIndex: 1,
-      pageSize: 50,
-      // keyword: "",
-    };
-
-    getList(data).then((res) => {
-      console.log(res);
-      const { list } = res;
-      this.resumeList = list;
-    });
     // this.getList();
 
     const systemInfo = uni.getSystemInfoSync();
@@ -937,6 +441,26 @@ export default {
   },
 
   methods: {
+    getData() {
+      let params = {
+        // orderByAsc: true,
+        pageIndex: 1,
+        pageSize: 1000,
+        // keyword: "",
+      };
+
+      getList(params).then((res) => {
+        console.log(res);
+        const { list } = res;
+        this.resumeList = list;
+      });
+
+      getLine(params).then((res) => {
+        const { list } = res;
+        this.content = list;
+        // this.resumeList = list;
+      });
+    },
     // cardSwiper
     cardSwiper(e) {
       this.cardCur = e.detail.current;
@@ -945,10 +469,15 @@ export default {
     resume(e) {
       this.cardCur2 = e.detail.current;
     },
-    // 跳转
     tn(e) {
       uni.navigateTo({
         url: e,
+      });
+    },
+    // 跳转
+    nv(item) {
+      uni.navigateTo({
+        url: "/preferredPages/product?id=" + item.id,
       });
     },
   },
@@ -1605,7 +1134,7 @@ export default {
 }
 
 .image-book {
-  padding: 150rpx 0rpx;
+  padding: 10rpx 0rpx;
   font-size: 16rpx;
   font-weight: 300;
   position: relative;

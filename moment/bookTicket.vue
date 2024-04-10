@@ -1,32 +1,137 @@
 <template>
   <view class="template-index tn-safe-area-inset-bottom">
     <!-- 顶部自定义导航 -->
-    <tn-nav-bar
-      :style="{ paddingTop: vuex_custom_bar_height + 'px' }"
-      :beforeBack="beforeBack"
+    <tn-nav-bar :style="{ paddingTop: vuex_custom_bar_height + 'px' }"
       >门票预订</tn-nav-bar
     >
 
+    <view class="">
+      <view class="tn-flex tn-flex-row-between">
+        <view class="justify-content-item tn-margin tn-text-bold tn-text-xxl">
+        </view>
+      </view>
+
+      <!-- <view
+        class="tn-flex tn-flex-row-between"
+        @click="tn('/activityPages/project')"
+      >
+        <view class="justify-content-item tn-margin tn-text-bold tn-text-xxl">
+          热门旅游线路
+        </view>
+        <view class="justify-content-item tn-margin tn-text-lg tn-color-grey">
+          <text class="tn-padding-xs">全部</text>
+          <text class="tn-icon-topics"></text>
+        </view>
+      </view> -->
+      <!-- 
+      <view
+        class="tn-flex tn-margin-left tn-margin-right tn-margin-top-sm"
+        @click="tn('/circlePages/news')"
+      >
+        <view class="tn-flex-2">
+          <view
+            class="image-pic tn-margin-right tn-shadow-blur"
+            style="
+              background-image: url('https://resource.tuniaokj.com/images/content/rodion.jpg');
+            "
+          >
+            <view class="image-tuniao1"> </view>
+          </view>
+        </view>
+        <view class="tn-flex-1">
+          <view
+            class="image-pic tn-shadow-blur"
+            style="
+              background-image: url('https://resource.tuniaokj.com/images/shop/phonecase1.jpg');
+            "
+          >
+            <view class="image-tuniao2"> </view>
+          </view>
+          <view
+            class="image-pic tn-margin-top tn-shadow-blur"
+            style="
+              background-image: url('https://resource.tuniaokj.com/images/shop/banner1.jpg');
+            "
+          >
+            <view class="image-tuniao2"> </view>
+          </view>
+        </view>
+      </view> -->
+
+      <!-- <view class="tn-flex tn-flex-row-between tn-margin-top">
+        <view class="justify-content-item tn-margin tn-text-bold tn-text-xxl">
+          业务范围
+        </view>
+        <view class="justify-content-item tn-margin tn-text-lg tn-color-grey">
+          <text class="tn-padding-xs">全部</text>
+          <text class="tn-icon-topics"></text>
+        </view>
+      </view> -->
+
+      <!-- <view
+        class="tn-info__container tn-flex tn-flex-wrap tn-flex-col-center tn-flex-row-between tn-margin-left tn-margin-right"
+      >
+        <block v-for="(item, index) in tuniaoData" :key="index">
+          <view
+            class="tn-info__item tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-between tn-color-white tn-shadow-blur"
+            :style="'background-color:' + item.color + ';'"
+            @click="tn('/homePages/profession')"
+          >
+            <view
+              class="tn-info__item__left tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-left"
+            >
+              <view class="tn-info__item__left__content">
+                <view
+                  class="tn-info__item__left__content--title tn-text-bold"
+                  style="font-size: 38rpx"
+                  >{{ item.title }}</view
+                >
+                <view
+                  class="tn-info__item__left__content--data tn-padding-top-xs"
+                >
+                  {{ item.value }}
+                  <text class="tn-icon-right tn-padding-left-xs"></text>
+                </view>
+              </view>
+            </view>
+            <view class="tn-info__item__right">
+              <view class="tn-info__item__right--icon">
+                <view :class="[`tn-icon-${item.icon}`]"></view>
+              </view>
+            </view>
+            <view class="tn-info__item__bottom">
+              <view
+                class="name tn-text-sm tn-color-gray"
+                style="margin-left: -10rpx"
+              >
+                <text
+                  class="tn-icon-code tn-padding-right-xs"
+                  style="opacity: 0"
+                ></text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view> -->
+    </view>
+
     <!-- 商家商品 start-->
     <view
-      :style="{ paddingTop: vuex_custom_bar_height + 40 + 'rpx' }"
       class="tn-flex tn-flex-wrap tn-margin-left-sm tn-margin-bottom-sm tn-margin-right-sm tn-margin-top-xs"
     >
       <block v-for="(item, index) in content" :key="index">
-        <view class="" style="width: 50%" @click="tn('/moment/ticketDetail')">
+        <view class="" style="width: 50%" @click="tn(item)">
           <view class="tn-blogger-content__wrap">
-            <view
-              class="image-picbook"
-              :style="'background-image:url(' + item.mainImage + ')'"
-            >
+            <view class="image-picbook">
               <view class="image-book"> </view>
+              <image :src="item.image" mode="" />
             </view>
 
             <view
               class="tn-blogger-content__label tn-text-justify tn-padding-sm"
             >
               <text class="tn-blogger-content__label__desc">{{
-                item.desc
+                item.name
               }}</text>
             </view>
 
@@ -44,14 +149,14 @@
                     <text
                       class="tn-padding-right-sm tn-text-bold tn-color-purplered"
                       style="font-size: 38rpx"
-                      >{{ item.collectionCount }}</text
+                      >{{ item.price }}</text
                     >
                     <!-- <text class="tn-blogger-content__count-icon tn-icon-message"></text>
                       <text class="tn-padding-right-sm">{{ item.commentCount }}</text> -->
                     <text
                       class="tn-color-gray tn-text-sm"
                       style="font-size: 24rpx"
-                      >{{ item.likeCount }} 人购买</text
+                      >{{ item.soldOutQuantity }} 人购买</text
                     >
                   </view>
                 </view>
@@ -99,6 +204,7 @@
 </template>
 
 <script>
+import { getList } from "@/api/ticket.js";
 export default {
   name: "Index",
   data() {
@@ -112,7 +218,7 @@ export default {
           title: "",
           name: "",
           text: "",
-          url: "/static/banner/m1.jpeg",
+          url: "/static/banner/b1.jpeg",
         },
         {
           id: 1,
@@ -120,7 +226,7 @@ export default {
           title: "",
           name: "",
           text: "",
-          url: "/static/banner/m2.jpeg",
+          url: "/static/banner/b1.jpeg",
         },
         {
           id: 2,
@@ -142,7 +248,7 @@ export default {
           share: "216",
           love: "962",
           avatar: "/static/avator.jpg",
-          url: "/static/ticket/t1.jpg",
+          url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
         },
         {
           id: 1,
@@ -153,7 +259,7 @@ export default {
           share: "94",
           love: "186",
           avatar: "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          url: "/static/ticket/t2.jpg",
+          url: "https://resource.tuniaokj.com/images/resume/resume-bg2.jpg",
         },
         {
           id: 2,
@@ -164,7 +270,7 @@ export default {
           share: "146",
           love: "379",
           avatar: "https://resource.tuniaokj.com/images/blogger/avatar_2.jpeg",
-          url: "/static/ticket/t3.jpg",
+          url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
         },
         {
           id: 3,
@@ -175,7 +281,7 @@ export default {
           share: "133",
           love: "432",
           avatar: "https://resource.tuniaokj.com/images/blogger/avatar_3.jpeg",
-          url: "/static/ticket/t4.jpg",
+          url: "https://resource.tuniaokj.com/images/resume/resume-bg2.jpg",
         },
         {
           id: 4,
@@ -186,220 +292,170 @@ export default {
           share: "321",
           love: "886",
           avatar: "https://resource.tuniaokj.com/images/blogger/avatar_4.jpeg",
-          url: "/static/hotel/m5.jpeg",
+          url: "https://resource.tuniaokj.com/images/resume/resume-bg.jpg",
         },
       ],
 
-      content: [
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "香港迪士尼乐园1日门票成人票",
-          mainImage: "/static/tickets/t1.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 816,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "太平山顶摩天台428门票成人票",
-          mainImage: "/static/tickets/t2.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 63,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "香港海洋公园日间门票成人票",
-          mainImage: "/static/tickets/t3.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 322,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "香港摩天轮门票成人票",
-          mainImage: "/static/tickets/t4.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 28,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "香港故宫文化博物馆标准门票(展厅1-7)成人票",
-          mainImage: "/static/tickets/t5.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 55,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "澳门塔观光层门票成人票",
-          mainImage: "/static/tickets/t6.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 126,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "澳门塔观光层门票成人票",
-          mainImage: "/static/tickets/t7.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 126,
-          commentCount: 999,
-          likeCount: 999,
-        },
-        {
-          userAvatar:
-            "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
-          userName: "ww",
-          date: "2021年12月20日",
-          label: ["烤肉", "烤肉"],
-          desc: "台北故宫博物院门票+个人语音导览票成人票",
-          mainImage: "/static/tickets/t8.jpg",
-          viewUser: {
-            latestUserAvatar: [
-              {
-                src: "/static/home/line2.jpg",
-              },
-              {
-                src: "/static/home/line3.jpg",
-              },
-              {
-                src: "/static/home/line4.jpg",
-              },
-            ],
-            viewUserCount: 129,
-          },
-          collectionCount: 109,
-          commentCount: 999,
-          likeCount: 999,
-        },
-      ],
+      content: [],
+
+      // content: [
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line1.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line2.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line3.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line4.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line2.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      //   {
+      //     userAvatar:
+      //       "https://resource.tuniaokj.com/images/blogger/avatar_1.jpeg",
+      //     userName: "ww",
+      //     date: "2021年12月20日",
+      //     label: ["烤肉", "烤肉"],
+      //     desc: "冬樱盛开的大理，一场从冬天到春天的环海自驾",
+      //     mainImage: "/static/home/line2.jpg",
+      //     viewUser: {
+      //       latestUserAvatar: [
+      //         {
+      //           src: "/static/home/line2.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line3.jpg",
+      //         },
+      //         {
+      //           src: "/static/home/line4.jpg",
+      //         },
+      //       ],
+      //       viewUserCount: 129,
+      //     },
+      //     collectionCount: 129,
+      //     commentCount: 999,
+      //     likeCount: 999,
+      //   },
+      // ],
 
       tuniaoData: [],
     };
@@ -411,8 +467,23 @@ export default {
     } else {
       this.isAndroid = true;
     }
+    this.getData();
+    console.log("2222");
   },
   methods: {
+    getData() {
+      let params = {
+        // orderByAsc: true,
+        pageIndex: 1,
+        pageSize: 1000,
+        // keyword: "",
+      };
+      getList(params).then((res) => {
+        const { list } = res;
+        this.content = list;
+        // this.resumeList = list;
+      });
+    },
     // cardSwiper
     cardSwiper(e) {
       this.cardCur = e.detail.current;
@@ -422,9 +493,9 @@ export default {
       this.cardCur2 = e.detail.current;
     },
     // 跳转
-    tn(e) {
+    tn(item) {
       uni.navigateTo({
-        url: e,
+        url: "/moment/ticketDetail?id=" + item.id,
       });
     },
   },
@@ -1065,7 +1136,7 @@ export default {
 }
 
 .image-book {
-  padding: 150rpx 0rpx;
+  padding: 10rpx 0rpx;
   font-size: 16rpx;
   font-weight: 300;
   position: relative;
