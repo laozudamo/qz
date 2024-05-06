@@ -1,377 +1,372 @@
 {
-  "easycom": {
-    "^tn-(.*)": "@/tuniao-ui/components/tn-$1/tn-$1.vue"
-  },
-  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-    {
-      "path": "pages/index",
-      "style": {
-        "mp-weixin": {
-          "disableScroll": true
-        },
-        "app-plus": {
-          "bounce": "none"
-        },
-        "mp-alipay": {
-          "allowsBounceVertical": "NO"
-        },
-        "mp-baidu": {
-          "disableScroll": true
-        }
-      }
-    }
-  ],
-  "subPackages": [
-    {
-      "root": "homePages",
-      "pages": [
-        {
-          "path": "search",
-          "style": {
-            "navigationBarTitleText": "全局搜索",
-            "enablePullDownRefresh": false
-          }
-        }
-      ]
-    },
-    {
-      "root": "circlePages",
-      "pages": [
-        {
-          "path": "blogger",
-          "style": {
-            "navigationBarTitleText": "博主_Me",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "blogger_other",
-          "style": {
-            "navigationBarTitleText": "博主_Ta",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "edit",
-          "style": {
-            "navigationBarTitleText": "编辑发布",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "ranking",
-          "style": {
-            "navigationBarTitleText": "积分排行",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "details",
-          "style": {
-            "navigationBarTitleText": "乡村游详情",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "reserve",
-          "style": {
-            "navigationBarTitleText": "预约接龙",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "create",
-          "style": {
-            "navigationBarTitleText": "活动创建",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "build",
-          "style": {
-            "navigationBarTitleText": "打造乡村游",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "chat",
-          "style": {
-            "navigationBarTitleText": "一起群聊",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "chatting",
-          "style": {
-            "navigationBarTitleText": "对话聊天",
-            "enablePullDownRefresh": false
-          }
-        }
-      ]
-    },
-    {
-      "root": "activityPages",
-      "pages": []
-    },
-    {
-      "root": "preferredPages",
-      "pages": [
-        {
-          "path": "shop",
-          "style": {
-            "navigationBarTitleText": "优质商家",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "product",
-          "style": {
-            "navigationBarTitleText": "商品详情",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "order",
-          "style": {
-            "navigationBarTitleText": "历史订单",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "classify",
-          "style": {
-            "navigationBarTitleText": "商品分类",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "photo",
-          "style": {
-            "navigationBarTitleText": "商家相册",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "website",
-          "style": {
-            "navigationBarTitleText": "品牌官网",
-            "enablePullDownRefresh": false
-          }
-        }
-      ]
-    },
-    {
-      "root": "minePages",
-      "pages": [
-        {
-          "path": "protocol",
-          "style": {
-            "navigationBarTitleText": "使用协议",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "login",
-          "style": {
-            "navigationBarTitleText": "授权登录",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "message",
-          "style": {
-            "navigationBarTitleText": "消息通知",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "set",
-          "style": {
-            "navigationBarTitleText": "全局设置",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "start",
-          "style": {
-            "navigationBarTitleText": "立即体验",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "thanks",
-          "style": {
-            "navigationBarTitleText": "感谢名单",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "help",
-          "style": {
-            "navigationBarTitleText": "帮助中心",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "avatar",
-          "style": {
-            "navigationBarTitleText": "头像上传",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "integral",
-          "style": {
-            "navigationBarTitleText": "积分明细",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "signed",
-          "style": {
-            "navigationBarTitleText": "积分签到",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "collect",
-          "style": {
-            "navigationBarTitleText": "好物收藏",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "safety",
-          "style": {
-            "navigationBarTitleText": "账号安全",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "default",
-          "style": {
-            "navigationBarTitleText": "缺省页",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "content",
-          "style": {
-            "navigationBarTitleText": "富文本",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "cart/cart",
-          "style": {
-            "navigationBarTitleText": "购物车",
-            "enablePullDownRefresh": false
-          }
-        }
-      ]
-    },
-    {
-      "root": "moment",
-      "pages": [
-        {
-          "path": "moment",
-          "style": {
-            "navigationBarTitleText": "动态",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "bookHotel",
-          "style": {
-            "navigationBarTitleText": "民宿",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "hotelDetail",
-          "style": {
-            "navigationBarTitleText": "详情",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "classify",
-          "style": {
-            "navigationBarTitleText": "集市",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "yx",
-          "style": {
-            "navigationBarTitleText": "优选",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "msg/msg",
-          "style": {
-            "navigationBarTitleText": "消息",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "msg/chat/chat",
-          "style": {
-            "navigationBarTitleText": "聊天",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "line",
-          "style": {
-            "navigationBarTitleText": "跟团游",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "cz",
-          "style": {
-            "navigationBarTitleText": "精选村庄",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "bookTicket",
-          "style": {
-            "navigationBarTitleText": "门票预订",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "ticketDetail",
-          "style": {
-            "navigationBarTitleText": "",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "productDetail",
-          "style": {
-            "navigationBarTitleText": "",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "czDetail",
-          "style": {
-            "navigationBarTitleText": "",
-            "enablePullDownRefresh": false
-          }
-        }
-      ]
-    }
-  ],
-  "globalStyle": {
-    "navigationStyle": "custom",
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": " UI+乡村游",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
-  }
+	"easycom": {
+		"^tn-(.*)": "@/tuniao-ui/components/tn-$1/tn-$1.vue",
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index",
+			"style": {
+				"mp-weixin": {
+					"disableScroll": true
+				},
+				"app-plus": {
+					"bounce": "none"
+				},
+				"mp-alipay": {
+					"allowsBounceVertical": "NO"
+				},
+				"mp-baidu": {
+					"disableScroll": true
+				}
+			}
+		}
+	],
+	"subPackages": [{
+			"root": "homePages",
+			"pages": [{
+				"path": "search",
+				"style": {
+					"navigationBarTitleText": "全局搜索",
+					"enablePullDownRefresh": false
+				}
+			}]
+		},
+		{
+			"root": "circlePages",
+			"pages": [{
+					"path": "blogger",
+					"style": {
+						"navigationBarTitleText": "博主_Me",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "blogger_other",
+					"style": {
+						"navigationBarTitleText": "博主_Ta",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "edit",
+					"style": {
+						"navigationBarTitleText": "编辑发布",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "ranking",
+					"style": {
+						"navigationBarTitleText": "积分排行",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "details",
+					"style": {
+						"navigationBarTitleText": "乡村游详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "reserve",
+					"style": {
+						"navigationBarTitleText": "预约接龙",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "create",
+					"style": {
+						"navigationBarTitleText": "活动创建",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "build",
+					"style": {
+						"navigationBarTitleText": "打造乡村游",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "chat",
+					"style": {
+						"navigationBarTitleText": "一起群聊",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "chatting",
+					"style": {
+						"navigationBarTitleText": "对话聊天",
+						"enablePullDownRefresh": false
+					}
+				}
+			]
+		},
+		{
+			"root": "activityPages",
+			"pages": []
+		},
+		{
+			"root": "preferredPages",
+			"pages": [{
+					"path": "shop",
+					"style": {
+						"navigationBarTitleText": "优质商家",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "product",
+					"style": {
+						"navigationBarTitleText": "商品详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "order",
+					"style": {
+						"navigationBarTitleText": "历史订单",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "classify",
+					"style": {
+						"navigationBarTitleText": "商品分类",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "photo",
+					"style": {
+						"navigationBarTitleText": "商家相册",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "website",
+					"style": {
+						"navigationBarTitleText": "品牌官网",
+						"enablePullDownRefresh": false
+					}
+				}
+			]
+		},
+		{
+			"root": "minePages",
+			"pages": [{
+					"path": "protocol",
+					"style": {
+						"navigationBarTitleText": "使用协议",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "login",
+					"style": {
+						"navigationBarTitleText": "授权登录",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "message",
+					"style": {
+						"navigationBarTitleText": "消息通知",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "set",
+					"style": {
+						"navigationBarTitleText": "全局设置",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "start",
+					"style": {
+						"navigationBarTitleText": "立即体验",
+						"enablePullDownRefresh": false
+					}
+				},
+
+				{
+					"path": "help",
+					"style": {
+						"navigationBarTitleText": "帮助中心",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "avatar",
+					"style": {
+						"navigationBarTitleText": "头像上传",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "integral",
+					"style": {
+						"navigationBarTitleText": "积分明细",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "signed",
+					"style": {
+						"navigationBarTitleText": "积分签到",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "collect",
+					"style": {
+						"navigationBarTitleText": "好物收藏",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "safety",
+					"style": {
+						"navigationBarTitleText": "账号安全",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "default",
+					"style": {
+						"navigationBarTitleText": "缺省页",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "content",
+					"style": {
+						"navigationBarTitleText": "富文本",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "cart/cart",
+					"style": {
+						"navigationBarTitleText": "购物车",
+						"enablePullDownRefresh": false
+					}
+				}
+			]
+		},
+		{
+			"root": "moment",
+			"pages": [{
+					"path": "moment",
+					"style": {
+						"navigationBarTitleText": "动态",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "bookHotel",
+					"style": {
+						"navigationBarTitleText": "民宿",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "hotelDetail",
+					"style": {
+						"navigationBarTitleText": "详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "classify",
+					"style": {
+						"navigationBarTitleText": "集市",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "yx",
+					"style": {
+						"navigationBarTitleText": "优选",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "msg/msg",
+					"style": {
+						"navigationBarTitleText": "消息",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "msg/chat/chat",
+					"style": {
+						"navigationBarTitleText": "聊天",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "line",
+					"style": {
+						"navigationBarTitleText": "跟团游",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "cz",
+					"style": {
+						"navigationBarTitleText": "精选村庄",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "bookTicket",
+					"style": {
+						"navigationBarTitleText": "门票预订",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "ticketDetail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "productDetail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "czDetail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "fans",
+					"style": {
+						"navigationBarTitleText": "粉丝列表",
+						"enablePullDownRefresh": false
+					}
+				}
+			]
+		}
+	],
+	"globalStyle": {
+		"navigationStyle": "custom",
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": " UI+乡村游",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
 }

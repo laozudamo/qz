@@ -205,7 +205,7 @@
         <view class="tn-flex tn-flex-row-center tn-radius tn-padding-top">
           <view
             class="tn-padding-sm tn-margin-xs tn-radius"
-            @click="tn('/preferredPages/order')"
+            @click="tn('/moment/fans')"
           >
             <view
               class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
@@ -216,7 +216,7 @@
                 <view class="tn-icon-order" style="color: #080808"></view>
               </view>
               <view class="tn-text-center">
-                <text class="tn-text-ellipsis">历史订单</text>
+                <text class="tn-text-ellipsis">粉丝列表</text>
               </view>
             </view>
           </view>
@@ -233,7 +233,7 @@
                 <view class="tn-icon-star" style="color: #080808"></view>
               </view>
               <view class="tn-text-center">
-                <text class="tn-text-ellipsis">收藏</text>
+                <text class="tn-text-ellipsis">收藏记录</text>
               </view>
             </view>
           </view>
