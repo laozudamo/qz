@@ -1638,9 +1638,6 @@ export default {
 /* 自定义导航栏内容 end */
 
 /* 全屏轮播  start*/
-.card-swiper {
-  height: 100vh !important;
-}
 
 .card-swiper swiper-item {
   width: 750rpx !important;

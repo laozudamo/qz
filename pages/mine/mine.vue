@@ -324,7 +324,7 @@
             </view>
           </button>
         </tn-list-cell> -->
-        <!-- <tn-list-cell
+        <tn-list-cell
           :hover="true"
           :unlined="true"
           :radius="true"
@@ -332,7 +332,7 @@
         >
           <button
             class="tn-flex tn-flex-col-center tn-button--clear-style"
-            open-type="feedback"
+            @click="show = true"
           >
             <view
               class="icon1__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-cool-bg-color-7 tn-color-white"
@@ -340,11 +340,13 @@
               <view class="tn-icon-comment-fill"></view>
             </view>
             <view class="tn-flex tn-flex-row-between" style="width: 100%">
-              <view class="tn-margin-left-sm">问题反馈</view>
+              <view class="tn-margin-left-sm">{{
+                this.vilage.name || "选择村庄"
+              }}</view>
               <view class="tn-color-green--light tn-icon-edit"></view>
             </view>
           </button>
-        </tn-list-cell> -->
+        </tn-list-cell>
 
         <tn-list-cell
           :hover="true"
@@ -371,24 +373,49 @@
       </view>
     </view>
 
+    <tn-picker
+      @confirm="confirm"
+      mode="selector"
+      v-model="show"
+      :defaultSelector="[0]"
+      :range="resumeList"
+      rangeKey="name"
+    ></tn-picker>
+
     <view class="tn-tabbar-height"></view>
   </view>
 </template>
 
 <script>
+import { getList } from "@/api/index.js";
 export default {
   name: "Mine",
   data() {
     return {
+      show: false,
+      columns: [],
+      vilage: null,
       userInfo: {
         head: "",
       },
+      resumeList: [
+        {
+          name: "A",
+          id: 1,
+        },
+        {
+          name: "B",
+          id: 2,
+        },
+      ],
     };
   },
   created() {
     let userInfo = uni.getStorageSync("userInfo");
     console.log(userInfo);
     this.userInfo = userInfo;
+    this.getData();
+    this.vilage = uni.getStorageSync("vilage") || "";
   },
   methods: {
     // 跳转到 官网
@@ -402,6 +429,23 @@ export default {
       uni.navigateToMiniProgram({
         appId: "wxf3d81a452b88ff4b",
       });
+    },
+    getData() {
+      let params = {
+        // orderByAsc: true,
+        pageIndex: 1,
+        pageSize: 1000,
+        // keyword: "",
+      };
+      getList(params).then((res) => {
+        console.log(res);
+        const { list } = res;
+        this.resumeList = list;
+      });
+    },
+    confirm(v) {
+      uni.setStorageSync("vilage", this.resumeList[v]);
+      this.vilage = this.resumeList[v];
     },
     // 跳转
     tn(e) {
